@@ -10,21 +10,26 @@ import {
   isSameDay,
   addMonths,
   subMonths,
-  isToday
+  isToday,
+  addYears,
+  subYears,
+  startOfYear,
+  endOfYear
 } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Grid3X3, List } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Grid3X3, List, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HolidayCard } from "./HolidayCard";
-import { BrazilianHoliday, getHolidaysByMonth } from "@/data/brazilian-holidays";
+import { YearView } from "./YearView";
+import { BrazilianHoliday, getHolidaysByMonth, getHolidaysByYear } from "@/data/brazilian-holidays";
 import { cn } from "@/lib/utils";
 
 interface CalendarProps {
   selectedHoliday: BrazilianHoliday | null;
   onHolidaySelect: (holiday: BrazilianHoliday) => void;
-  view: 'month' | 'list';
-  onViewChange: (view: 'month' | 'list') => void;
+  view: 'month' | 'list' | 'year';
+  onViewChange: (view: 'month' | 'list' | 'year') => void;
 }
 
 export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange }: CalendarProps) {
@@ -32,12 +37,17 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
   const [holidays, setHolidays] = useState<BrazilianHoliday[]>([]);
 
   useEffect(() => {
-    const monthHolidays = getHolidaysByMonth(
-      currentDate.getFullYear(), 
-      currentDate.getMonth()
-    );
-    setHolidays(monthHolidays);
-  }, [currentDate]);
+    if (view === 'year') {
+      const yearHolidays = getHolidaysByYear(currentDate.getFullYear());
+      setHolidays(yearHolidays);
+    } else {
+      const monthHolidays = getHolidaysByMonth(
+        currentDate.getFullYear(), 
+        currentDate.getMonth()
+      );
+      setHolidays(monthHolidays);
+    }
+  }, [currentDate, view]);
 
   const monthStart = startOfMonth(currentDate);
   const monthEnd = endOfMonth(monthStart);
@@ -59,9 +69,74 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
     );
   };
 
+  const navigateYear = (direction: 'prev' | 'next') => {
+    setCurrentDate(prev => 
+      direction === 'prev' ? subYears(prev, 1) : addYears(prev, 1)
+    );
+  };
+
   const goToToday = () => {
     setCurrentDate(new Date());
   };
+
+  if (view === 'year') {
+    return (
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => navigateYear('prev')}
+              className="hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Button>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-primary via-accent to-holiday-cultural bg-clip-text text-transparent">
+              {format(currentDate, 'yyyy', { locale: ptBR })}
+            </h2>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => navigateYear('next')}
+              className="hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </Button>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={goToToday}>
+              <CalendarIcon className="w-4 h-4 mr-2" />
+              Hoje
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => onViewChange('month')}
+            >
+              <Grid3X3 className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => onViewChange('list')}
+            >
+              <List className="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+
+        <YearView 
+          currentDate={currentDate}
+          holidays={holidays}
+          selectedHoliday={selectedHoliday}
+          onHolidaySelect={onHolidaySelect}
+        />
+      </div>
+    );
+  }
 
   if (view === 'list') {
     return (
@@ -155,6 +230,14 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
           <Button variant="outline" size="sm" onClick={goToToday}>
             <CalendarIcon className="w-4 h-4 mr-2" />
             Hoje
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => onViewChange('year')}
+            title="Ver ano completo"
+          >
+            <CalendarDays className="w-4 h-4" />
           </Button>
           <Button
             variant="outline"

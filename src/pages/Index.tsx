@@ -11,7 +11,7 @@ import { Calendar as CalendarIcon, Search, Menu, Flag } from "lucide-react";
 const Index = () => {
   const [selectedHoliday, setSelectedHoliday] = useState<BrazilianHoliday | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [calendarView, setCalendarView] = useState<'month' | 'list'>('month');
+  const [calendarView, setCalendarView] = useState<'month' | 'list' | 'year'>('month');
 
   const handleHolidaySelect = (holiday: BrazilianHoliday) => {
     setSelectedHoliday(holiday);

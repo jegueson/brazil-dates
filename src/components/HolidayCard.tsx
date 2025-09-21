@@ -9,7 +9,7 @@ interface HolidayCardProps {
   holiday: BrazilianHoliday;
   onClick?: () => void;
   isSelected?: boolean;
-  view?: 'calendar' | 'list';
+  view?: 'calendar' | 'list' | 'year';
 }
 
 const holidayTypeConfig = {
@@ -39,6 +39,32 @@ export function HolidayCard({ holiday, onClick, isSelected, view = 'calendar' }:
   const config = holidayTypeConfig[holiday.type];
   const holidayDate = new Date(holiday.date);
   
+  if (view === 'year') {
+    return (
+      <div
+        onClick={onClick}
+        className={cn(
+          "p-2 rounded-lg border text-xs cursor-pointer transition-all duration-200",
+          "hover:shadow-md hover:scale-105",
+          isSelected ? "bg-primary text-primary-foreground border-primary" : "bg-card hover:bg-muted/50",
+          `hover:border-${config.color}`
+        )}
+      >
+        <div className="flex items-center justify-between">
+          <span className="font-medium truncate">{holiday.name}</span>
+          <span className="text-xs opacity-70 ml-1">
+            {format(new Date(holiday.date), 'd')}
+          </span>
+        </div>
+        <div className="flex items-center mt-1">
+          <Badge variant="outline" className={cn("text-xs px-1 py-0", `text-${config.color}`)}>
+            {config.icon}
+          </Badge>
+        </div>
+      </div>
+    );
+  }
+
   if (view === 'calendar') {
     return (
       <div
