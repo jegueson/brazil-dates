@@ -477,6 +477,630 @@ export const brazilianHolidays: BrazilianHoliday[] = [
       'Decorar casa e árvore',
       'Organizar encontro familiar'
     ]
+  },
+
+  // 2027 Holidays
+  {
+    id: 'ano-novo-2027',
+    date: '2027-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'O primeiro dia do ano é celebrado em todo o Brasil com festas, fogos de artifício e tradições especiais.',
+    traditions: [
+      'Roupas brancas para dar sorte',
+      'Queima de fogos de artifício',
+      'Festa na praia de Copacabana',
+      'Ceia de Ano Novo com lentilha',
+      'Pular sete ondas no mar'
+    ],
+    significance: 'Marca o início de um novo ciclo, sendo momento de renovação e esperanças.',
+    preparation: [
+      'Comprar roupas brancas',
+      'Preparar ceia especial',
+      'Organizar festa em casa ou escolher local para comemorar'
+    ]
+  },
+  {
+    id: 'carnaval-2027',
+    date: '2027-02-09',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil, celebrada com desfiles, blocos e muita música.',
+    traditions: [
+      'Desfiles das escolas de samba',
+      'Blocos de rua',
+      'Fantasias coloridas',
+      'Música e dança'
+    ],
+    regionalVariations: [
+      'Rio de Janeiro: Sambódromo e blocos de rua',
+      'Salvador: Trio elétrico e axé',
+      'Recife/Olinda: Frevo e bonecos gigantes'
+    ],
+    significance: 'Expressão máxima da cultura brasileira, misturando tradições africanas, indígenas e europeias.',
+    preparation: [
+      'Escolher fantasia',
+      'Programar roteiro de blocos',
+      'Reservar hospedagem com antecedência'
+    ]
+  },
+  {
+    id: 'tiradentes-2027',
+    date: '2027-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Feriado nacional em homenagem ao mártir da Inconfidência Mineira.',
+    traditions: [
+      'Visitação a museus históricos',
+      'Turismo histórico em Minas Gerais',
+      'Reflexões sobre história do Brasil'
+    ],
+    significance: 'Homenagem a Joaquim José da Silva Xavier, símbolo da luta pela independência.',
+    preparation: [
+      'Visitar Ouro Preto e região',
+      'Estudar história da Inconfidência Mineira'
+    ]
+  },
+  {
+    id: 'dia-trabalho-2027',
+    date: '2027-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Feriado mundial que celebra os direitos dos trabalhadores.',
+    traditions: [
+      'Descanso do trabalho',
+      'Manifestações sindicais',
+      'Tempo em família'
+    ],
+    significance: 'Reconhecimento da importância do trabalho e dos direitos trabalhistas.',
+    preparation: [
+      'Planejar descanso ou viagem curta'
+    ]
+  },
+  {
+    id: 'independencia-2027',
+    date: '2027-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência brasileira proclamada em 1822.',
+    traditions: [
+      'Desfile militar em Brasília',
+      'Hasteamento da bandeira',
+      'Eventos patrióticos'
+    ],
+    significance: 'Marco da emancipação política do Brasil do domínio português.',
+    preparation: [
+      'Assistir desfile pela TV',
+      'Visitar museus históricos'
+    ]
+  },
+  {
+    id: 'nossa-senhora-2027',
+    date: '2027-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Feriado nacional dedicado à padroeira do Brasil.',
+    traditions: [
+      'Peregrinação a Aparecida-SP',
+      'Missas especiais',
+      'Procissões religiosas'
+    ],
+    significance: 'Devoção à padroeira do Brasil, unindo fé católica e identidade nacional.',
+    preparation: [
+      'Planejar visita ao Santuário',
+      'Participar de novena'
+    ]
+  },
+  {
+    id: 'finados-2027',
+    date: '2027-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Dia de homenagem aos que já partiram.',
+    traditions: [
+      'Visitas aos cemitérios',
+      'Flores nos túmulos',
+      'Orações pelos falecidos'
+    ],
+    significance: 'Momento de lembrança e oração pelos entes queridos que faleceram.',
+    preparation: [
+      'Comprar flores',
+      'Organizar visita ao cemitério'
+    ]
+  },
+  {
+    id: 'proclamacao-republica-2027',
+    date: '2027-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Comemoração da proclamação da República brasileira em 1889.',
+    traditions: [
+      'Eventos históricos educativos',
+      'Reflexões sobre cidadania'
+    ],
+    significance: 'Marco da transição do Império para a República no Brasil.',
+    preparation: [
+      'Estudar história republicana',
+      'Visitar locais históricos'
+    ]
+  },
+  {
+    id: 'consciencia-negra-2027',
+    date: '2027-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Dia Nacional de Zumbi dedicado à reflexão sobre a importância da cultura afro-brasileira.',
+    traditions: [
+      'Eventos culturais afro-brasileiros',
+      'Palestras sobre história negra',
+      'Manifestações culturais'
+    ],
+    significance: 'Celebra a contribuição dos afrodescendentes para a formação da sociedade brasileira.',
+    preparation: [
+      'Participar de eventos culturais',
+      'Estudar história afro-brasileira'
+    ]
+  },
+  {
+    id: 'natal-2027',
+    date: '2027-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Celebração do nascimento de Jesus Cristo.',
+    traditions: [
+      'Ceia de Natal em família',
+      'Troca de presentes',
+      'Árvore e decorações natalinas'
+    ],
+    significance: 'Celebração cristã que reúne famílias e promove valores de amor e união.',
+    preparation: [
+      'Preparar cardápio especial',
+      'Comprar e embrulhar presentes',
+      'Decorar casa e árvore'
+    ]
+  },
+
+  // 2028 Holidays
+  {
+    id: 'ano-novo-2028',
+    date: '2028-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'O primeiro dia do ano é celebrado em todo o Brasil com festas, fogos de artifício e tradições especiais.',
+    traditions: [
+      'Roupas brancas para dar sorte',
+      'Queima de fogos de artifício',
+      'Festa na praia de Copacabana'
+    ],
+    significance: 'Marca o início de um novo ciclo, sendo momento de renovação e esperanças.',
+    preparation: [
+      'Comprar roupas brancas',
+      'Preparar ceia especial'
+    ]
+  },
+  {
+    id: 'carnaval-2028',
+    date: '2028-02-29',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil, celebrada com desfiles, blocos e muita música.',
+    traditions: [
+      'Desfiles das escolas de samba',
+      'Blocos de rua',
+      'Fantasias coloridas'
+    ],
+    significance: 'Expressão máxima da cultura brasileira, misturando tradições africanas, indígenas e europeias.',
+    preparation: [
+      'Escolher fantasia',
+      'Programar roteiro de blocos'
+    ]
+  },
+  {
+    id: 'tiradentes-2028',
+    date: '2028-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Feriado nacional em homenagem ao mártir da Inconfidência Mineira.',
+    traditions: [
+      'Visitação a museus históricos',
+      'Turismo histórico em Minas Gerais'
+    ],
+    significance: 'Homenagem a Joaquim José da Silva Xavier, símbolo da luta pela independência.',
+    preparation: [
+      'Visitar Ouro Preto e região'
+    ]
+  },
+  {
+    id: 'dia-trabalho-2028',
+    date: '2028-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Feriado mundial que celebra os direitos dos trabalhadores.',
+    traditions: [
+      'Descanso do trabalho',
+      'Manifestações sindicais'
+    ],
+    significance: 'Reconhecimento da importância do trabalho e dos direitos trabalhistas.',
+    preparation: [
+      'Planejar descanso ou viagem curta'
+    ]
+  },
+  {
+    id: 'independencia-2028',
+    date: '2028-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência brasileira proclamada em 1822.',
+    traditions: [
+      'Desfile militar em Brasília',
+      'Hasteamento da bandeira'
+    ],
+    significance: 'Marco da emancipação política do Brasil do domínio português.',
+    preparation: [
+      'Assistir desfile pela TV'
+    ]
+  },
+  {
+    id: 'nossa-senhora-2028',
+    date: '2028-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Feriado nacional dedicado à padroeira do Brasil.',
+    traditions: [
+      'Peregrinação a Aparecida-SP',
+      'Missas especiais'
+    ],
+    significance: 'Devoção à padroeira do Brasil, unindo fé católica e identidade nacional.',
+    preparation: [
+      'Planejar visita ao Santuário'
+    ]
+  },
+  {
+    id: 'finados-2028',
+    date: '2028-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Dia de homenagem aos que já partiram.',
+    traditions: [
+      'Visitas aos cemitérios',
+      'Flores nos túmulos'
+    ],
+    significance: 'Momento de lembrança e oração pelos entes queridos que faleceram.',
+    preparation: [
+      'Comprar flores'
+    ]
+  },
+  {
+    id: 'proclamacao-republica-2028',
+    date: '2028-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Comemoração da proclamação da República brasileira em 1889.',
+    traditions: [
+      'Eventos históricos educativos'
+    ],
+    significance: 'Marco da transição do Império para a República no Brasil.',
+    preparation: [
+      'Estudar história republicana'
+    ]
+  },
+  {
+    id: 'consciencia-negra-2028',
+    date: '2028-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Dia Nacional de Zumbi dedicado à reflexão sobre a importância da cultura afro-brasileira.',
+    traditions: [
+      'Eventos culturais afro-brasileiros',
+      'Palestras sobre história negra'
+    ],
+    significance: 'Celebra a contribuição dos afrodescendentes para a formação da sociedade brasileira.',
+    preparation: [
+      'Participar de eventos culturais'
+    ]
+  },
+  {
+    id: 'natal-2028',
+    date: '2028-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Celebração do nascimento de Jesus Cristo.',
+    traditions: [
+      'Ceia de Natal em família',
+      'Troca de presentes'
+    ],
+    significance: 'Celebração cristã que reúne famílias e promove valores de amor e união.',
+    preparation: [
+      'Preparar cardápio especial'
+    ]
+  },
+
+  // 2029 Holidays
+  {
+    id: 'ano-novo-2029',
+    date: '2029-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'O primeiro dia do ano é celebrado em todo o Brasil com festas, fogos de artifício e tradições especiais.',
+    traditions: [
+      'Roupas brancas para dar sorte',
+      'Queima de fogos de artifício'
+    ],
+    significance: 'Marca o início de um novo ciclo, sendo momento de renovação e esperanças.',
+    preparation: [
+      'Comprar roupas brancas'
+    ]
+  },
+  {
+    id: 'carnaval-2029',
+    date: '2029-02-13',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil, celebrada com desfiles, blocos e muita música.',
+    traditions: [
+      'Desfiles das escolas de samba',
+      'Blocos de rua'
+    ],
+    significance: 'Expressão máxima da cultura brasileira, misturando tradições africanas, indígenas e europeias.',
+    preparation: [
+      'Escolher fantasia'
+    ]
+  },
+  {
+    id: 'tiradentes-2029',
+    date: '2029-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Feriado nacional em homenagem ao mártir da Inconfidência Mineira.',
+    traditions: [
+      'Visitação a museus históricos'
+    ],
+    significance: 'Homenagem a Joaquim José da Silva Xavier, símbolo da luta pela independência.',
+    preparation: [
+      'Visitar Ouro Preto e região'
+    ]
+  },
+  {
+    id: 'dia-trabalho-2029',
+    date: '2029-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Feriado mundial que celebra os direitos dos trabalhadores.',
+    traditions: [
+      'Descanso do trabalho'
+    ],
+    significance: 'Reconhecimento da importância do trabalho e dos direitos trabalhistas.',
+    preparation: [
+      'Planejar descanso'
+    ]
+  },
+  {
+    id: 'independencia-2029',
+    date: '2029-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência brasileira proclamada em 1822.',
+    traditions: [
+      'Desfile militar em Brasília'
+    ],
+    significance: 'Marco da emancipação política do Brasil do domínio português.',
+    preparation: [
+      'Assistir desfile pela TV'
+    ]
+  },
+  {
+    id: 'nossa-senhora-2029',
+    date: '2029-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Feriado nacional dedicado à padroeira do Brasil.',
+    traditions: [
+      'Peregrinação a Aparecida-SP'
+    ],
+    significance: 'Devoção à padroeira do Brasil, unindo fé católica e identidade nacional.',
+    preparation: [
+      'Planejar visita ao Santuário'
+    ]
+  },
+  {
+    id: 'finados-2029',
+    date: '2029-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Dia de homenagem aos que já partiram.',
+    traditions: [
+      'Visitas aos cemitérios'
+    ],
+    significance: 'Momento de lembrança e oração pelos entes queridos que faleceram.',
+    preparation: [
+      'Comprar flores'
+    ]
+  },
+  {
+    id: 'proclamacao-republica-2029',
+    date: '2029-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Comemoração da proclamação da República brasileira em 1889.',
+    traditions: [
+      'Eventos históricos educativos'
+    ],
+    significance: 'Marco da transição do Império para a República no Brasil.',
+    preparation: [
+      'Estudar história republicana'
+    ]
+  },
+  {
+    id: 'consciencia-negra-2029',
+    date: '2029-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Dia Nacional de Zumbi dedicado à reflexão sobre a importância da cultura afro-brasileira.',
+    traditions: [
+      'Eventos culturais afro-brasileiros'
+    ],
+    significance: 'Celebra a contribuição dos afrodescendentes para a formação da sociedade brasileira.',
+    preparation: [
+      'Participar de eventos culturais'
+    ]
+  },
+  {
+    id: 'natal-2029',
+    date: '2029-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Celebração do nascimento de Jesus Cristo.',
+    traditions: [
+      'Ceia de Natal em família'
+    ],
+    significance: 'Celebração cristã que reúne famílias e promove valores de amor e união.',
+    preparation: [
+      'Preparar cardápio especial'
+    ]
+  },
+
+  // 2030 Holidays
+  {
+    id: 'ano-novo-2030',
+    date: '2030-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'O primeiro dia do ano é celebrado em todo o Brasil com festas, fogos de artifício e tradições especiais.',
+    traditions: [
+      'Roupas brancas para dar sorte',
+      'Queima de fogos de artifício'
+    ],
+    significance: 'Marca o início de um novo ciclo, sendo momento de renovação e esperanças.',
+    preparation: [
+      'Comprar roupas brancas'
+    ]
+  },
+  {
+    id: 'carnaval-2030',
+    date: '2030-03-05',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil, celebrada com desfiles, blocos e muita música.',
+    traditions: [
+      'Desfiles das escolas de samba',
+      'Blocos de rua'
+    ],
+    significance: 'Expressão máxima da cultura brasileira, misturando tradições africanas, indígenas e europeias.',
+    preparation: [
+      'Escolher fantasia'
+    ]
+  },
+  {
+    id: 'tiradentes-2030',
+    date: '2030-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Feriado nacional em homenagem ao mártir da Inconfidência Mineira.',
+    traditions: [
+      'Visitação a museus históricos'
+    ],
+    significance: 'Homenagem a Joaquim José da Silva Xavier, símbolo da luta pela independência.',
+    preparation: [
+      'Visitar Ouro Preto e região'
+    ]
+  },
+  {
+    id: 'dia-trabalho-2030',
+    date: '2030-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Feriado mundial que celebra os direitos dos trabalhadores.',
+    traditions: [
+      'Descanso do trabalho'
+    ],
+    significance: 'Reconhecimento da importância do trabalho e dos direitos trabalhistas.',
+    preparation: [
+      'Planejar descanso'
+    ]
+  },
+  {
+    id: 'independencia-2030',
+    date: '2030-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência brasileira proclamada em 1822.',
+    traditions: [
+      'Desfile militar em Brasília'
+    ],
+    significance: 'Marco da emancipação política do Brasil do domínio português.',
+    preparation: [
+      'Assistir desfile pela TV'
+    ]
+  },
+  {
+    id: 'nossa-senhora-2030',
+    date: '2030-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Feriado nacional dedicado à padroeira do Brasil.',
+    traditions: [
+      'Peregrinação a Aparecida-SP'
+    ],
+    significance: 'Devoção à padroeira do Brasil, unindo fé católica e identidade nacional.',
+    preparation: [
+      'Planejar visita ao Santuário'
+    ]
+  },
+  {
+    id: 'finados-2030',
+    date: '2030-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Dia de homenagem aos que já partiram.',
+    traditions: [
+      'Visitas aos cemitérios'
+    ],
+    significance: 'Momento de lembrança e oração pelos entes queridos que faleceram.',
+    preparation: [
+      'Comprar flores'
+    ]
+  },
+  {
+    id: 'proclamacao-republica-2030',
+    date: '2030-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Comemoração da proclamação da República brasileira em 1889.',
+    traditions: [
+      'Eventos históricos educativos'
+    ],
+    significance: 'Marco da transição do Império para a República no Brasil.',
+    preparation: [
+      'Estudar história republicana'
+    ]
+  },
+  {
+    id: 'consciencia-negra-2030',
+    date: '2030-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Dia Nacional de Zumbi dedicado à reflexão sobre a importância da cultura afro-brasileira.',
+    traditions: [
+      'Eventos culturais afro-brasileiros'
+    ],
+    significance: 'Celebra a contribuição dos afrodescendentes para a formação da sociedade brasileira.',
+    preparation: [
+      'Participar de eventos culturais'
+    ]
+  },
+  {
+    id: 'natal-2030',
+    date: '2030-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Celebração do nascimento de Jesus Cristo.',
+    traditions: [
+      'Ceia de Natal em família'
+    ],
+    significance: 'Celebração cristã que reúne famílias e promove valores de amor e união.',
+    preparation: [
+      'Preparar cardápio especial'
+    ]
   }
 ];
 
