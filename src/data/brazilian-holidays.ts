@@ -1101,6 +1101,1116 @@ export const brazilianHolidays: BrazilianHoliday[] = [
     preparation: [
       'Preparar cardápio especial'
     ]
+  },
+  // 2031-2040 Holidays
+  {
+    id: 'ano-novo-2031',
+    date: '2031-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2031',
+    date: '2031-03-04',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2031',
+    date: '2031-04-18',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2031',
+    date: '2031-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2031',
+    date: '2031-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2031',
+    date: '2031-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2031',
+    date: '2031-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2031',
+    date: '2031-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2031',
+    date: '2031-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2031',
+    date: '2031-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2031',
+    date: '2031-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2032
+  {
+    id: 'ano-novo-2032',
+    date: '2032-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2032',
+    date: '2032-02-24',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2032',
+    date: '2032-03-26',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2032',
+    date: '2032-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2032',
+    date: '2032-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2032',
+    date: '2032-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2032',
+    date: '2032-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2032',
+    date: '2032-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2032',
+    date: '2032-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2032',
+    date: '2032-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2032',
+    date: '2032-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2033
+  {
+    id: 'ano-novo-2033',
+    date: '2033-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2033',
+    date: '2033-02-15',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2033',
+    date: '2033-04-15',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2033',
+    date: '2033-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2033',
+    date: '2033-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2033',
+    date: '2033-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2033',
+    date: '2033-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2033',
+    date: '2033-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2033',
+    date: '2033-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2033',
+    date: '2033-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2033',
+    date: '2033-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2034
+  {
+    id: 'ano-novo-2034',
+    date: '2034-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2034',
+    date: '2034-02-28',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2034',
+    date: '2034-04-07',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2034',
+    date: '2034-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2034',
+    date: '2034-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2034',
+    date: '2034-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2034',
+    date: '2034-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2034',
+    date: '2034-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2034',
+    date: '2034-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2034',
+    date: '2034-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2034',
+    date: '2034-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2035
+  {
+    id: 'ano-novo-2035',
+    date: '2035-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2035',
+    date: '2035-02-13',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2035',
+    date: '2035-03-30',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2035',
+    date: '2035-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2035',
+    date: '2035-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2035',
+    date: '2035-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2035',
+    date: '2035-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2035',
+    date: '2035-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2035',
+    date: '2035-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2035',
+    date: '2035-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2035',
+    date: '2035-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2036
+  {
+    id: 'ano-novo-2036',
+    date: '2036-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2036',
+    date: '2036-03-04',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2036',
+    date: '2036-04-18',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2036',
+    date: '2036-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2036',
+    date: '2036-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2036',
+    date: '2036-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2036',
+    date: '2036-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2036',
+    date: '2036-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2036',
+    date: '2036-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2036',
+    date: '2036-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2036',
+    date: '2036-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2037
+  {
+    id: 'ano-novo-2037',
+    date: '2037-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2037',
+    date: '2037-02-17',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2037',
+    date: '2037-04-03',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2037',
+    date: '2037-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2037',
+    date: '2037-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2037',
+    date: '2037-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2037',
+    date: '2037-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2037',
+    date: '2037-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2037',
+    date: '2037-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2037',
+    date: '2037-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2037',
+    date: '2037-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2038
+  {
+    id: 'ano-novo-2038',
+    date: '2038-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2038',
+    date: '2038-03-09',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2038',
+    date: '2038-04-23',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2038',
+    date: '2038-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2038',
+    date: '2038-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2038',
+    date: '2038-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2038',
+    date: '2038-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2038',
+    date: '2038-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2038',
+    date: '2038-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2038',
+    date: '2038-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2038',
+    date: '2038-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2039
+  {
+    id: 'ano-novo-2039',
+    date: '2039-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2039',
+    date: '2039-02-22',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2039',
+    date: '2039-04-08',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2039',
+    date: '2039-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2039',
+    date: '2039-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2039',
+    date: '2039-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2039',
+    date: '2039-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2039',
+    date: '2039-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2039',
+    date: '2039-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2039',
+    date: '2039-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2039',
+    date: '2039-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
+  },
+  // 2040
+  {
+    id: 'ano-novo-2040',
+    date: '2040-01-01',
+    name: 'Ano Novo',
+    type: 'federal',
+    description: 'Celebração do primeiro dia do ano.',
+    traditions: ['Roupas brancas', 'Fogos de artifício'],
+    significance: 'Renovação e esperança para o novo ano.',
+    preparation: ['Comprar roupas brancas', 'Preparar ceia']
+  },
+  {
+    id: 'carnaval-2040',
+    date: '2040-02-14',
+    name: 'Carnaval',
+    type: 'cultural',
+    description: 'A maior festa popular do Brasil.',
+    traditions: ['Desfiles de escola de samba', 'Blocos de rua'],
+    significance: 'Expressão cultural brasileira.',
+    preparation: ['Escolher fantasia', 'Programar blocos']
+  },
+  {
+    id: 'sexta-feira-santa-2040',
+    date: '2040-03-30',
+    name: 'Sexta-feira Santa',
+    type: 'religious',
+    description: 'Dia da crucificação de Cristo.',
+    traditions: ['Via Sacra', 'Procissões'],
+    significance: 'Reflexão espiritual cristã.',
+    preparation: ['Participar de celebrações religiosas']
+  },
+  {
+    id: 'tiradentes-2040',
+    date: '2040-04-21',
+    name: 'Tiradentes',
+    type: 'federal',
+    description: 'Homenagem ao mártir da Inconfidência Mineira.',
+    traditions: ['Visitação a museus históricos'],
+    significance: 'Símbolo da luta pela independência.',
+    preparation: ['Visitar Ouro Preto']
+  },
+  {
+    id: 'dia-trabalho-2040',
+    date: '2040-05-01',
+    name: 'Dia do Trabalho',
+    type: 'federal',
+    description: 'Celebração dos direitos trabalhistas.',
+    traditions: ['Descanso do trabalho'],
+    significance: 'Reconhecimento dos direitos dos trabalhadores.',
+    preparation: ['Planejar descanso']
+  },
+  {
+    id: 'independencia-2040',
+    date: '2040-09-07',
+    name: 'Independência do Brasil',
+    type: 'federal',
+    description: 'Comemoração da independência de 1822.',
+    traditions: ['Desfile militar'],
+    significance: 'Marco da emancipação política.',
+    preparation: ['Assistir desfile']
+  },
+  {
+    id: 'nossa-senhora-2040',
+    date: '2040-10-12',
+    name: 'Nossa Senhora Aparecida',
+    type: 'religious',
+    description: 'Padroeira do Brasil.',
+    traditions: ['Peregrinação a Aparecida'],
+    significance: 'Devoção nacional católica.',
+    preparation: ['Planejar visita ao Santuário']
+  },
+  {
+    id: 'finados-2040',
+    date: '2040-11-02',
+    name: 'Finados',
+    type: 'religious',
+    description: 'Homenagem aos que partiram.',
+    traditions: ['Visitas aos cemitérios'],
+    significance: 'Lembrança dos entes queridos.',
+    preparation: ['Comprar flores']
+  },
+  {
+    id: 'proclamacao-republica-2040',
+    date: '2040-11-15',
+    name: 'Proclamação da República',
+    type: 'federal',
+    description: 'Marco da República brasileira.',
+    traditions: ['Eventos educativos'],
+    significance: 'Transição do Império para República.',
+    preparation: ['Estudar história']
+  },
+  {
+    id: 'consciencia-negra-2040',
+    date: '2040-11-20',
+    name: 'Consciência Negra',
+    type: 'federal',
+    description: 'Reflexão sobre cultura afro-brasileira.',
+    traditions: ['Eventos culturais'],
+    significance: 'Contribuição afrodescendente.',
+    preparation: ['Participar de eventos']
+  },
+  {
+    id: 'natal-2040',
+    date: '2040-12-25',
+    name: 'Natal',
+    type: 'religious',
+    description: 'Nascimento de Jesus Cristo.',
+    traditions: ['Ceia em família'],
+    significance: 'Celebração cristã de união.',
+    preparation: ['Preparar cardápio']
   }
 ];
 

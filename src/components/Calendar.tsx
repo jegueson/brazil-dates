@@ -22,6 +22,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HolidayCard } from "./HolidayCard";
 import { YearView } from "./YearView";
+import { SocialShare } from "./SocialShare";
+import { PrintCalendar } from "./PrintCalendar";
 import { BrazilianHoliday, getHolidaysByMonth, getHolidaysByYear } from "@/data/brazilian-holidays";
 import { cn } from "@/lib/utils";
 
@@ -111,6 +113,8 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
               <CalendarIcon className="w-4 h-4 mr-2" />
               Hoje
             </Button>
+            <SocialShare title={`Feriados Brasileiros - ${format(currentDate, 'yyyy')}`} />
+            <PrintCalendar currentDate={currentDate} holidays={holidays} view="year" />
             <Button
               variant="outline"
               size="icon"
@@ -167,6 +171,8 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
             <Button variant="outline" size="sm" onClick={goToToday}>
               Hoje
             </Button>
+            <SocialShare title={`Feriados - ${format(currentDate, 'MMMM yyyy', { locale: ptBR })}`} />
+            <PrintCalendar currentDate={currentDate} holidays={holidays} view="month" />
             <Button
               variant="outline"
               size="icon"
@@ -231,6 +237,8 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
             <CalendarIcon className="w-4 h-4 mr-2" />
             Hoje
           </Button>
+          <SocialShare title={`Feriados - ${format(currentDate, 'MMMM yyyy', { locale: ptBR })}`} />
+          <PrintCalendar currentDate={currentDate} holidays={holidays} view="month" />
           <Button
             variant="outline"
             size="icon"
