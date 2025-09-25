@@ -3,6 +3,7 @@ import { Calendar } from "@/components/Calendar";
 import { HolidayModal } from "@/components/HolidayModal";
 import { HolidayCountdown } from "@/components/HolidayCountdown";
 import { SearchBar } from "@/components/SearchBar";
+import { MobileNavigation } from "@/components/MobileNavigation";
 import { BrazilianHoliday } from "@/data/brazilian-holidays";
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarIcon, Search, Menu, Flag } from "lucide-react";
@@ -44,23 +45,33 @@ const Index = () => {
             </div>
             
             <div className="flex items-center gap-3">
-              <SearchBar 
-                onHolidaySelect={handleHolidaySelect}
-                selectedHoliday={selectedHoliday}
-              />
-              <Button variant="outline" size="icon" className="md:hidden">
-                <Menu className="w-4 h-4" />
-              </Button>
+              <div className="hidden sm:block">
+                <SearchBar 
+                  onHolidaySelect={handleHolidaySelect}
+                  selectedHoliday={selectedHoliday}
+                />
+              </div>
+              <MobileNavigation />
             </div>
           </div>
         </div>
       </header>
 
+      {/* Mobile Search Bar */}
+      <div className="sm:hidden bg-card/50 border-b border-border/30">
+        <div className="container mx-auto px-4 py-3">
+          <SearchBar 
+            onHolidaySelect={handleHolidaySelect}
+            selectedHoliday={selectedHoliday}
+          />
+        </div>
+      </div>
+
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <main className="container mx-auto px-4 py-4 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8">
           {/* Sidebar - Countdown and Cultural Info */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-4 sm:space-y-6 order-2 lg:order-1">
             <HolidayCountdown />
             
             {/* Cultural Tip Card */}
@@ -88,7 +99,7 @@ const Index = () => {
           </div>
 
           {/* Main Calendar Area */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-4 sm:space-y-6 order-1 lg:order-2">
             <Calendar
               selectedHoliday={selectedHoliday}
               onHolidaySelect={handleHolidaySelect}

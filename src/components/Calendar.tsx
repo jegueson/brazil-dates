@@ -58,6 +58,29 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
 
   const dateRange = eachDayOfInterval({ start: startDate, end: endDate });
   const weekDays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  
+  const holidayTypeConfig = {
+    federal: {
+      color: 'holiday-federal',
+      icon: '🇧🇷',
+      label: 'Federal'
+    },
+    religious: {
+      color: 'holiday-religious', 
+      icon: '⛪',
+      label: 'Religioso'
+    },
+    cultural: {
+      color: 'holiday-cultural',
+      icon: '🎉',
+      label: 'Cultural'
+    },
+    commercial: {
+      color: 'holiday-commercial',
+      icon: '🛍️',
+      label: 'Comercial'
+    }
+  };
 
   const getHolidayForDate = (date: Date): BrazilianHoliday | undefined => {
     return holidays.find(holiday => 
@@ -267,14 +290,15 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
       )}
 
       {/* Calendar Grid */}
-      <div className="grid grid-cols-7 gap-1 bg-card rounded-xl p-4 shadow-lg border">
+      <div className="grid grid-cols-7 gap-px sm:gap-1 bg-card rounded-xl p-2 sm:p-4 shadow-lg border overflow-hidden">
         {/* Week days header */}
         {weekDays.map(day => (
           <div 
             key={day}
-            className="p-3 text-center text-sm font-semibold text-muted-foreground border-b border-border/50"
+            className="p-1 sm:p-3 text-center text-xs sm:text-sm font-semibold text-muted-foreground border-b border-border/50"
           >
-            {day}
+            <span className="hidden sm:inline">{day}</span>
+            <span className="sm:hidden">{day.charAt(0)}</span>
           </div>
         ))}
         
@@ -288,28 +312,52 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
             <div
               key={date.toISOString()}
               className={cn(
-                "min-h-[120px] p-2 border-r border-b border-border/30 transition-all duration-200",
+                "min-h-[80px] sm:min-h-[120px] p-1 sm:p-2 border-r border-b border-border/20 transition-all duration-200 relative",
                 !isCurrentMonth && "bg-muted/30 text-muted-foreground",
                 isTodayDate && "bg-primary/10 border-primary/30",
                 "hover:bg-muted/50"
               )}
             >
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-1 sm:mb-2">
                 <span className={cn(
-                  "text-sm font-medium",
-                  isTodayDate && "bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-xs"
+                  "text-xs sm:text-sm font-medium",
+                  isTodayDate && "bg-primary text-primary-foreground w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs"
                 )}>
                   {format(date, 'd')}
                 </span>
               </div>
               
               {holiday && (
-                <HolidayCard
-                  holiday={holiday}
-                  onClick={() => onHolidaySelect(holiday)}
-                  isSelected={selectedHoliday?.id === holiday.id}
-                  view="calendar"
-                />
+                <div className="absolute inset-1 sm:inset-2 top-6 sm:top-8">
+                  <div
+                    onClick={() => onHolidaySelect(holiday)}
+                    className={cn(
+                      "group cursor-pointer p-1 sm:p-2 rounded text-xs sm:text-sm border transition-all duration-200 hover:shadow-md animate-fade-in",
+                      `hover:border-${holidayTypeConfig[holiday.type].color}`,
+                      selectedHoliday?.id === holiday.id && `border-${holidayTypeConfig[holiday.type].color} shadow-lg`,
+                      "bg-gradient-to-br from-card to-card/80 h-full overflow-hidden"
+                    )}
+                  >
+                    <div className="flex items-start gap-1">
+                      <span className="text-xs sm:text-sm flex-shrink-0">{holidayTypeConfig[holiday.type].icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-medium text-xs sm:text-sm leading-tight text-card-foreground group-hover:text-primary transition-colors line-clamp-2 sm:line-clamp-3">
+                          {holiday.name}
+                        </h3>
+                        <div className="hidden sm:block mt-1">
+                          <div 
+                            className={cn(
+                              "text-xs px-1 py-0.5 rounded border inline-block",
+                              `border-${holidayTypeConfig[holiday.type].color}/20 text-${holidayTypeConfig[holiday.type].color}`
+                            )}
+                          >
+                            {holidayTypeConfig[holiday.type].label}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           );
