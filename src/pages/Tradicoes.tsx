@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Music, Utensils, Gift, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Tradicoes = () => {
+  useSEO(seoConfigs.tradicoes);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Header */}
@@ -34,9 +37,9 @@ const Tradicoes = () => {
               <Music className="w-10 h-10 text-white" />
             </div>
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-foreground">
+              <h1 className="text-4xl font-bold text-foreground">
                 Um Mosaico de Culturas
-              </h2>
+              </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 As tradições brasileiras são o resultado de séculos de miscigenação cultural, 
                 criando celebrações únicas que expressam nossa identidade nacional.

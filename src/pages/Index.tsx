@@ -8,11 +8,15 @@ import { BrazilianHoliday } from "@/data/brazilian-holidays";
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarIcon, Search, Menu, Flag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Index = () => {
   const [selectedHoliday, setSelectedHoliday] = useState<BrazilianHoliday | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [calendarView, setCalendarView] = useState<'month' | 'list' | 'year'>('month');
+
+  // SEO Configuration
+  useSEO(seoConfigs.home);
 
   const handleHolidaySelect = (holiday: BrazilianHoliday) => {
     setSelectedHoliday(holiday);
@@ -36,7 +40,7 @@ const Index = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-holiday-cultural bg-clip-text text-transparent">
-                  Calendário Brasileiro
+                  Calendário Brasileiro 2025
                 </h1>
                 <p className="text-sm text-muted-foreground">
                   Feriados e datas comemorativas do Brasil

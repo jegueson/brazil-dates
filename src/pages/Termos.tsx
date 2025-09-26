@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, FileText, AlertCircle, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Termos = () => {
+  useSEO(seoConfigs.termos);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Header */}

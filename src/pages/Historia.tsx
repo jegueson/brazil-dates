@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, BookOpen, Crown, Cross, Palmtree } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Historia = () => {
+  useSEO(seoConfigs.historia);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Header */}
@@ -34,9 +37,9 @@ const Historia = () => {
               <BookOpen className="w-10 h-10 text-white" />
             </div>
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-foreground">
+              <h1 className="text-4xl font-bold text-foreground">
                 Uma Jornada Através do Tempo
-              </h2>
+              </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Descubra como os feriados brasileiros evoluíram desde o período colonial 
                 até os dias de hoje, refletindo nossa história e diversidade cultural.

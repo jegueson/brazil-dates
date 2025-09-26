@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://calendario-brasileiro.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calendario-brasileiro.com/" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/sobre</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/sobre" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/historia</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/historia" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/tradicoes</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/tradicoes" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/contato</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/contato" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/privacidade</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/privacidade" />
+  </url>
+  <url>
+    <loc>https://calendario-brasileiro.com/termos</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/termos" />
+  </url>
+</urlset>

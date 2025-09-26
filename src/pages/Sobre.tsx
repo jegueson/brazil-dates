@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Heart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Sobre = () => {
+  useSEO(seoConfigs.sobre);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Header */}
@@ -34,9 +37,9 @@ const Sobre = () => {
               <Calendar className="w-10 h-10 text-white" />
             </div>
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-foreground">
+              <h1 className="text-4xl font-bold text-foreground">
                 Celebrando a Riqueza Cultural Brasileira
-              </h2>
+              </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 O Calendário Brasileiro nasceu da paixão de preservar e compartilhar as tradições 
                 que fazem do Brasil um país único no mundo.

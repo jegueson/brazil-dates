@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Contato = () => {
+  useSEO(seoConfigs.contato);
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Header */}
@@ -37,9 +40,9 @@ const Contato = () => {
               <MessageSquare className="w-10 h-10 text-white" />
             </div>
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-foreground">
+              <h1 className="text-4xl font-bold text-foreground">
                 Fale Conosco
-              </h2>
+              </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Tem dúvidas, sugestões ou quer compartilhar uma tradição? 
                 Entre em contato conosco!
