@@ -1,13 +1,77 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, MessageSquare, Phone, MapPin } from "lucide-react";
+import { ArrowLeft, Mail, MessageSquare, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Contato = () => {
   useSEO(seoConfigs.contato);
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Contato Calendário Brasileiro: ${formData.subject}`);
+      const body = encodeURIComponent(`
+Nome: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Assunto: ${formData.subject}
+
+Mensagem:
+${formData.message}
+
+---
+Enviado através do site Calendário Brasileiro
+      `);
+      
+      const mailtoLink = `mailto:contato@calendario-feriados.com.br?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 5000);
+      
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
@@ -55,39 +119,94 @@ const Contato = () => {
             <section className="space-y-6">
               <h3 className="text-2xl font-bold">Envie uma Mensagem</h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">Nome</Label>
-                    <Input id="firstName" placeholder="Seu nome" />
+                    <Input 
+                      id="firstName" 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder="Seu nome" 
+                      required 
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Sobrenome</Label>
-                    <Input id="lastName" placeholder="Seu sobrenome" />
+                    <Input 
+                      id="lastName" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder="Seu sobrenome" 
+                      required 
+                    />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="email">E-mail</Label>
-                  <Input id="email" type="email" placeholder="seu@email.com" />
+                  <Input 
+                    id="email" 
+                    name="email"
+                    type="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="seu@email.com" 
+                    required 
+                  />
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="subject">Assunto</Label>
-                  <Input id="subject" placeholder="Sobre o que você gostaria de falar?" />
+                  <Input 
+                    id="subject" 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Sobre o que você gostaria de falar?" 
+                    required 
+                  />
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="message">Mensagem</Label>
                   <Textarea 
                     id="message" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Compartilhe suas dúvidas, sugestões ou tradições familiares..."
                     rows={6}
+                    required 
                   />
                 </div>
                 
-                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90">
-                  Enviar Mensagem
+                {isSubmitted && (
+                  <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-lg border border-green-200">
+                    <CheckCircle className="w-5 h-5" />
+                    <span>Mensagem preparada! Seu cliente de email será aberto.</span>
+                  </div>
+                )}
+                
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                      Preparando...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Enviar Mensagem
+                    </>
+                  )}
                 </Button>
               </form>
             </section>
@@ -104,7 +223,7 @@ const Contato = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-2">E-mail</h4>
-                      <p className="text-muted-foreground">contato@calendariobrasileiro.com.br</p>
+                      <p className="text-muted-foreground">contato@calendario-feriados.com.br</p>
                       <p className="text-sm text-muted-foreground mt-1">
                         Respondemos em até 24 horas
                       </p>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, BookOpen, Crown, Cross, Palmtree } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { useSEO, seoConfigs } from "@/hooks/useSEO";
 
 const Historia = () => {
@@ -8,8 +10,10 @@ const Historia = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border/50">
+      <Header showSearch={false} />
+      
+      {/* Custom Header for Historia Page */}
+      <div className="bg-card/50 border-b border-border/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <Link to="/">
@@ -27,7 +31,7 @@ const Historia = () => {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-12">
@@ -220,6 +224,8 @@ const Historia = () => {
           </section>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };

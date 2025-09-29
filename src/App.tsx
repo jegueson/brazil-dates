@@ -10,6 +10,8 @@ import Tradicoes from "./pages/Tradicoes";
 import Contato from "./pages/Contato";
 import Privacidade from "./pages/Privacidade";
 import Termos from "./pages/Termos";
+import Regionais from "./pages/Regionais";
+import Regional from "./pages/Regional";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,7 +21,12 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sobre" element={<Sobre />} />
@@ -28,6 +35,8 @@ const App = () => (
           <Route path="/contato" element={<Contato />} />
           <Route path="/privacidade" element={<Privacidade />} />
           <Route path="/termos" element={<Termos />} />
+          <Route path="/regionais" element={<Regionais />} />
+          <Route path="/regional/:state" element={<Regional />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

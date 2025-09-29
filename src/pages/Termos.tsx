@@ -280,7 +280,7 @@ const Termos = () => {
                   Se você tiver dúvidas sobre estes termos de uso:
                 </p>
                 <p className="text-sm text-foreground font-medium">
-                  E-mail: juridico@calendariobrasileiro.com.br
+                  E-mail: contato@calendario-feriados.com.br
                 </p>
               </div>
               

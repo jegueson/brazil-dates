@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Flag, Home, Info, History, Sparkles, Mail, Shield, FileText } from "lucide-react";
+import { Menu, Flag, Home, Info, History, Sparkles, Mail, Shield, FileText, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function MobileNavigation() {
@@ -9,6 +9,7 @@ export function MobileNavigation() {
 
   const navItems = [
     { href: "/", label: "Início", icon: Home },
+    { href: "/regionais", label: "Regionais", icon: MapPin },
     { href: "/sobre", label: "Sobre", icon: Info },
     { href: "/historia", label: "História", icon: History },
     { href: "/tradicoes", label: "Tradições", icon: Sparkles },

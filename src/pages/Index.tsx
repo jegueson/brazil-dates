@@ -95,6 +95,7 @@ const Index = () => {
                 🔗 Links Úteis
               </h3>
               <ul className="space-y-2 text-sm">
+                <li><Link to="/regionais" className="text-muted-foreground hover:text-primary transition-colors">Feriados Regionais</Link></li>
                 <li><Link to="/sobre" className="text-muted-foreground hover:text-primary transition-colors">Sobre o Calendário</Link></li>
                 <li><Link to="/historia" className="text-muted-foreground hover:text-primary transition-colors">História dos Feriados</Link></li>
                 <li><Link to="/tradicoes" className="text-muted-foreground hover:text-primary transition-colors">Tradições Brasileiras</Link></li>
@@ -140,6 +141,7 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Páginas</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link to="/regionais" className="text-muted-foreground hover:text-primary transition-colors">Regionais</Link></li>
                 <li><Link to="/sobre" className="text-muted-foreground hover:text-primary transition-colors">Sobre</Link></li>
                 <li><Link to="/historia" className="text-muted-foreground hover:text-primary transition-colors">História dos Feriados</Link></li>
                 <li><Link to="/tradicoes" className="text-muted-foreground hover:text-primary transition-colors">Tradições</Link></li>

@@ -1,53 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://calendario-brasileiro.com/</loc>
+    <loc>https://calendario-feriados.com.br/</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://calendario-brasileiro.com/" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calendario-feriados.com.br/" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/sobre</loc>
+    <loc>https://calendario-feriados.com.br/regionais</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regionais" />
+  </url>
+  <url>
+    <loc>https://calendario-feriados.com.br/sobre</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/sobre" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/sobre" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/historia</loc>
+    <loc>https://calendario-feriados.com.br/historia</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/historia" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/historia" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/tradicoes</loc>
+    <loc>https://calendario-feriados.com.br/tradicoes</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/tradicoes" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/tradicoes" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/contato</loc>
+    <loc>https://calendario-feriados.com.br/contato</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/contato" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/contato" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/privacidade</loc>
+    <loc>https://calendario-feriados.com.br/privacidade</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/privacidade" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/privacidade" />
   </url>
   <url>
-    <loc>https://calendario-brasileiro.com/termos</loc>
+    <loc>https://calendario-feriados.com.br/termos</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-brasileiro.com/termos" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/termos" />
+  </url>
+  
+  <!-- Regional Pages -->
+  <url>
+    <loc>https://calendario-feriados.com.br/regional/rio-janeiro</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regional/rio-janeiro" />
+  </url>
+  <url>
+    <loc>https://calendario-feriados.com.br/regional/sao-paulo</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regional/sao-paulo" />
+  </url>
+  <url>
+    <loc>https://calendario-feriados.com.br/regional/minas-gerais</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regional/minas-gerais" />
+  </url>
+  <url>
+    <loc>https://calendario-feriados.com.br/regional/bahia</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regional/bahia" />
+  </url>
+  <url>
+    <loc>https://calendario-feriados.com.br/regional/parana</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calendario-feriados.com.br/regional/parana" />
   </url>
 </urlset>
