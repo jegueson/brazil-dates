@@ -1,0 +1,33 @@
+name: Preview E2E Smoke
+
+on:
+  deployment_status:
+
+jobs:
+  smoke-preview:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment_url != null && contains(github.event.deployment.environment, 'Preview')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: brazil-dates
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: brazil-dates/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run smoke tests against preview
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ github.event.deployment_status.environment_url }}
+        run: npm run test:e2e

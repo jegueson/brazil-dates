@@ -9,6 +9,7 @@ import { brazilianHolidays } from "@/data/brazilian-holidays";
 
 const Regional = () => {
   const { state } = useParams<{ state: string }>();
+  const stateParam = state ?? "brasil";
   
   const getStateDisplayName = (stateParam: string): string => {
     const stateMap: { [key: string]: string } = {
@@ -23,11 +24,7 @@ const Regional = () => {
     return stateMap[stateParam] || stateParam;
   };
   
-  if (!state) {
-    return <div>Estado não encontrado</div>;
-  }
-
-  const stateName = getStateDisplayName(state);
+  const stateName = getStateDisplayName(stateParam);
   const regionalHolidays = getRegionalHolidaysByState(stateName);
   const nationalHolidays = brazilianHolidays.filter(holiday => 
     holiday.type === 'federal' || holiday.type === 'religious'
@@ -70,7 +67,11 @@ const Regional = () => {
   const stateRegion = getStateRegion(stateName);
 
   // SEO Configuration with Brazilian optimizations
-  useSEO(getRegionalSEO(state, stateName, stateRegion));
+  useSEO(getRegionalSEO(stateParam, stateName, stateRegion));
+
+  if (!state) {
+    return <div>Estado não encontrado</div>;
+  }
 
   const getStateInfo = (stateName: string) => {
     const stateInfo: { [key: string]: { region: string; capital: string; population: string; description: string } } = {

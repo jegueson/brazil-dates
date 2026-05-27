@@ -2,7 +2,7 @@ export interface RegionalHoliday {
   id: string;
   date: string;
   name: string;
-  type: 'municipal' | 'estadual' | 'regional';
+  type: 'municipal' | 'estadual' | 'regional' | 'cultural';
   description: string;
   traditions: string[];
   significance: string;
