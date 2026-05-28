@@ -87,6 +87,7 @@ npm run test:e2e
 
 ### CI expectations
 
+- Pipeline validation PRs exercise the full GitHub Actions and Vercel preview flow before merging.
 - Pull requests to `main` must pass lint, typecheck, unit tests, build, and preview smoke E2E checks.
 - `main` should be protected in GitHub with:
   - required status checks
