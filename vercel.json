@@ -1,5 +1,6 @@
 {
   "framework": "vite",
+  "installCommand": "npm install && npx playwright install chromium",
   "rewrites": [
     {
       "source": "/api/(.*)",

@@ -1,5 +1,5 @@
-import { spawn } from "child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "fs";
+import { execSync, spawn } from "child_process";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { chromium } from "playwright";
@@ -26,10 +26,25 @@ async function waitForServer(url, timeoutMs = 90000) {
   throw new Error("Preview server did not start in time");
 }
 
+function ensureChromium() {
+  let executablePath;
+  try {
+    executablePath = chromium.executablePath();
+  } catch {
+    executablePath = null;
+  }
+  if (executablePath && existsSync(executablePath)) return;
+
+  console.log("Playwright Chromium not found — installing for prerender...");
+  execSync("npx playwright install chromium", { cwd: root, stdio: "inherit" });
+}
+
 async function main() {
   if (!readFileSync(join(root, "package.json"), "utf8")) {
     throw new Error("Invalid project root");
   }
+
+  ensureChromium();
 
   let routes;
   try {
