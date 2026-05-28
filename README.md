@@ -112,6 +112,7 @@ Use `.env.example` as the contract for required public variables:
 
 1. Import this GitHub repository into Vercel.
 2. Configure:
+   - Root Directory: repository root (leave empty; do **not** use `brazil-dates`)
    - Production branch: `main`
    - Automatic preview deployments for pull requests
 3. Add environment variables in all three scopes (`Development`, `Preview`, `Production`).
