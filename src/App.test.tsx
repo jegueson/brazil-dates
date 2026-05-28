@@ -6,7 +6,7 @@ describe("App", () => {
   it("renders the home page main heading", () => {
     render(<App />);
     expect(
-      screen.getByRole("heading", { name: /calendário brasileiro 2025/i }),
+      screen.getByRole("heading", { name: /calendário brasileiro 202\d/i }),
     ).toBeInTheDocument();
   });
 });

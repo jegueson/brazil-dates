@@ -1,3 +1,5 @@
+import { regionalHolidaysExtra } from "./regional-holidays-extra";
+
 export interface RegionalHoliday {
   id: string;
   date: string;
@@ -584,22 +586,27 @@ export const regionalHolidays: RegionalHoliday[] = [
   }
 ];
 
+const allRegionalHolidays: RegionalHoliday[] = [
+  ...regionalHolidays,
+  ...regionalHolidaysExtra,
+];
+
 export const getRegionalHolidaysByState = (state: string): RegionalHoliday[] => {
-  return regionalHolidays.filter(holiday => holiday.state === state);
+  return allRegionalHolidays.filter((holiday) => holiday.state === state);
 };
 
 export const getRegionalHolidaysByRegion = (region: string): RegionalHoliday[] => {
-  return regionalHolidays.filter(holiday => holiday.region === region);
+  return allRegionalHolidays.filter((holiday) => holiday.region === region);
 };
 
 export const getRegionalHolidaysByCity = (city: string): RegionalHoliday[] => {
-  return regionalHolidays.filter(holiday => holiday.city === city);
+  return allRegionalHolidays.filter((holiday) => holiday.city === city);
 };
 
 export const getAllStates = (): string[] => {
-  return [...new Set(regionalHolidays.map(holiday => holiday.state))];
+  return [...new Set(allRegionalHolidays.map((holiday) => holiday.state))];
 };
 
 export const getAllRegions = (): string[] => {
-  return [...new Set(regionalHolidays.map(holiday => holiday.region))];
+  return [...new Set(allRegionalHolidays.map((holiday) => holiday.region))];
 };
