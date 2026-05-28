@@ -62,7 +62,11 @@ async function main() {
 
   try {
     await waitForServer(BASE);
-    const browser = await chromium.launch();
+    const browser = await chromium.launch({
+      args: process.env.VERCEL
+        ? ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+        : [],
+    });
     const page = await browser.newPage();
 
     for (const route of routes) {
