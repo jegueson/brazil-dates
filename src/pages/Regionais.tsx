@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSEO, seoConfigs } from "@/hooks/useSEO";
-import { getAllStates, getRegionalHolidaysByState } from "@/data/regional-holidays";
+import { getRegionalHolidaysByState } from "@/data/regional-holidays";
+import { BRAZIL_STATES, stateNameToSlug } from "@/data/brazil-states";
 
 const Regionais = () => {
   useSEO(seoConfigs.regionais);
 
-  const states = getAllStates();
+  const states = BRAZIL_STATES.map((s) => s.name);
   
   const getStateInfo = (stateName: string) => {
     const stateInfo: { [key: string]: { region: string; capital: string; population: string; description: string; flag: string } } = {
@@ -66,17 +67,7 @@ const Regionais = () => {
     return stateInfo[stateName] || { region: '', capital: '', population: '', description: '', flag: '🇧🇷' };
   };
 
-  const getStateSlug = (stateName: string): string => {
-    return stateName.toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/ã/g, 'a')
-      .replace(/á/g, 'a')
-      .replace(/é/g, 'e')
-      .replace(/í/g, 'i')
-      .replace(/ó/g, 'o')
-      .replace(/ú/g, 'u')
-      .replace(/ç/g, 'c');
-  };
+  const getStateSlug = (stateName: string): string => stateNameToSlug(stateName);
 
   const getRegionColor = (region: string): string => {
     const colors: { [key: string]: string } = {

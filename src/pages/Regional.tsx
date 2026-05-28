@@ -6,22 +6,14 @@ import { Footer } from "@/components/Footer";
 import { useSEO, getRegionalSEO } from "@/hooks/useSEO";
 import { getRegionalHolidaysByState, RegionalHoliday } from "@/data/regional-holidays";
 import { brazilianHolidays } from "@/data/brazilian-holidays";
+import { getStateBySlug } from "@/data/brazil-states";
 
 const Regional = () => {
   const { state } = useParams<{ state: string }>();
   const stateParam = state ?? "brasil";
   
   const getStateDisplayName = (stateParam: string): string => {
-    const stateMap: { [key: string]: string } = {
-      'rio-janeiro': 'Rio de Janeiro',
-      'sao-paulo': 'São Paulo',
-      'bahia': 'Bahia',
-      'minas-gerais': 'Minas Gerais',
-      'pernambuco': 'Pernambuco',
-      'para': 'Pará',
-      'rio-grande-sul': 'Rio Grande do Sul'
-    };
-    return stateMap[stateParam] || stateParam;
+    return getStateBySlug(stateParam)?.name ?? stateParam;
   };
   
   const stateName = getStateDisplayName(stateParam);
@@ -73,55 +65,22 @@ const Regional = () => {
     return <div>Estado não encontrado</div>;
   }
 
-  const getStateInfo = (stateName: string) => {
-    const stateInfo: { [key: string]: { region: string; capital: string; population: string; description: string } } = {
-      'Rio de Janeiro': {
-        region: 'Sudeste',
-        capital: 'Rio de Janeiro',
-        population: '17,4 milhões',
-        description: 'Estado conhecido por suas praias, carnaval e cultura vibrante.'
-      },
-      'São Paulo': {
-        region: 'Sudeste',
-        capital: 'São Paulo',
-        population: '46,6 milhões',
-        description: 'Maior estado do Brasil, centro econômico e cultural do país.'
-      },
-      'Bahia': {
-        region: 'Nordeste',
-        capital: 'Salvador',
-        population: '14,9 milhões',
-        description: 'Estado com forte herança africana e tradições religiosas únicas.'
-      },
-      'Minas Gerais': {
-        region: 'Sudeste',
-        capital: 'Belo Horizonte',
-        population: '21,4 milhões',
-        description: 'Estado histórico com rica tradição cultural e gastronômica.'
-      },
-      'Pernambuco': {
-        region: 'Nordeste',
-        capital: 'Recife',
-        population: '9,7 milhões',
-        description: 'Berço do frevo e das festas juninas mais animadas do Brasil.'
-      },
-      'Pará': {
-        region: 'Norte',
-        capital: 'Belém',
-        population: '8,7 milhões',
-        description: 'Estado amazônico com tradições indígenas e o maior Círio do Brasil.'
-      },
-      'Rio Grande do Sul': {
-        region: 'Sul',
-        capital: 'Porto Alegre',
-        population: '11,4 milhões',
-        description: 'Estado com forte tradição gaúcha e cultura única no Brasil.'
+  const stateMeta = getStateBySlug(stateParam);
+  const stateInfo = stateMeta
+    ? {
+        region: stateMeta.region,
+        capital: stateMeta.capital,
+        population: stateMeta.population,
+        description: stateMeta.description,
+        culturalContent: stateMeta.culturalContent,
       }
-    };
-    return stateInfo[stateName] || { region: '', capital: '', population: '', description: '' };
-  };
-
-  const stateInfo = getStateInfo(stateName);
+    : {
+        region: stateRegion,
+        capital: "",
+        population: "",
+        description: "",
+        culturalContent: "",
+      };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
@@ -185,6 +144,13 @@ const Regional = () => {
               <p className="text-muted-foreground">{stateInfo.population} habitantes</p>
             </div>
           </section>
+
+          {stateInfo.culturalContent && (
+            <section className="bg-muted/20 rounded-xl p-8 border border-border">
+              <h2 className="text-2xl font-bold mb-4">Cultura e tradições em {stateName}</h2>
+              <p className="text-muted-foreground leading-relaxed">{stateInfo.culturalContent}</p>
+            </section>
+          )}
 
           {/* Regional Holidays */}
           <section className="space-y-8">

@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSEO, seoConfigs } from "@/hooks/useSEO";
+import { WEB3FORMS_ACCESS_KEY, LEGAL_ENTITY } from "@/lib/site-config";
 
 const Contato = () => {
   useSEO(seoConfigs.contato);
@@ -35,39 +36,42 @@ const Contato = () => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Contato Calendário Brasileiro: ${formData.subject}`);
-      const body = encodeURIComponent(`
-Nome: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Assunto: ${formData.subject}
+      if (WEB3FORMS_ACCESS_KEY) {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            subject: `Contato: ${formData.subject}`,
+            message: formData.message,
+          }),
+        });
+        const data = await response.json();
+        if (!data.success) {
+          throw new Error(data.message || "Falha ao enviar formulário");
+        }
+      } else {
+        const subject = encodeURIComponent(`Contato Calendário Brasileiro: ${formData.subject}`);
+        const body = encodeURIComponent(
+          `Nome: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\n${formData.message}`
+        );
+        window.location.href = `mailto:${LEGAL_ENTITY.email}?subject=${subject}&body=${body}`;
+      }
 
-Mensagem:
-${formData.message}
-
----
-Enviado através do site Calendário Brasileiro
-      `);
-      
-      const mailtoLink = `mailto:contato@calendario-feriados.com.br?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Reset form
       setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
       });
-      
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 5000);
-      
     } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
+      console.error("Erro ao enviar formulário:", error);
+      throw error;
     } finally {
       setIsSubmitting(false);
     }
@@ -186,7 +190,7 @@ Enviado através do site Calendário Brasileiro
                 {isSubmitted && (
                   <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-lg border border-green-200">
                     <CheckCircle className="w-5 h-5" />
-                    <span>Mensagem preparada! Seu cliente de email será aberto.</span>
+                    <span>Mensagem enviada com sucesso! Responderemos em breve.</span>
                   </div>
                 )}
                 

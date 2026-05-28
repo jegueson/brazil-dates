@@ -9,13 +9,15 @@ export function MobileNavigation() {
 
   const navItems = [
     { href: "/", label: "Início", icon: Home },
+    { href: "/feriados/2026", label: "Feriados 2026", icon: MapPin },
     { href: "/regionais", label: "Regionais", icon: MapPin },
+    { href: "/blog", label: "Blog", icon: Sparkles },
+    { href: "/calculadora-dias-uteis", label: "Dias úteis", icon: FileText },
+    { href: "/perguntas-frequentes", label: "FAQ", icon: Info },
+    { href: "/equipe", label: "Equipe", icon: Info },
     { href: "/sobre", label: "Sobre", icon: Info },
-    { href: "/historia", label: "História", icon: History },
-    { href: "/tradicoes", label: "Tradições", icon: Sparkles },
     { href: "/contato", label: "Contato", icon: Mail },
     { href: "/privacidade", label: "Privacidade", icon: Shield },
-    { href: "/termos", label: "Termos", icon: FileText },
   ];
 
   const handleLinkClick = () => {

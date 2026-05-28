@@ -1,0 +1,130 @@
+{
+  "year": 2025,
+  "generatedAt": "2026-05-28T17:06:08.070Z",
+  "source": "https://calendario-feriados.com.br",
+  "license": "CC BY 4.0 — attribution required",
+  "federal": [
+    {
+      "id": "ano-novo-2025",
+      "date": "2025-01-01",
+      "name": "Ano Novo",
+      "type": "federal"
+    },
+    {
+      "id": "tiradentes-2025",
+      "date": "2025-04-21",
+      "name": "Tiradentes",
+      "type": "federal"
+    },
+    {
+      "id": "dia-trabalho-2025",
+      "date": "2025-05-01",
+      "name": "Dia do Trabalho",
+      "type": "federal"
+    },
+    {
+      "id": "independencia-2025",
+      "date": "2025-09-07",
+      "name": "Independência do Brasil",
+      "type": "federal"
+    },
+    {
+      "id": "proclamacao-republica-2025",
+      "date": "2025-11-15",
+      "name": "Proclamação da República",
+      "type": "federal"
+    },
+    {
+      "id": "consciencia-negra-2025",
+      "date": "2025-11-20",
+      "name": "Consciência Negra",
+      "type": "federal"
+    }
+  ],
+  "all": [
+    {
+      "id": "ano-novo-2025",
+      "date": "2025-01-01",
+      "name": "Ano Novo",
+      "type": "federal"
+    },
+    {
+      "id": "dia-mundial-paz-2025",
+      "date": "2025-01-01",
+      "name": "Dia Mundial da Paz",
+      "type": "cultural"
+    },
+    {
+      "id": "carnaval-2025",
+      "date": "2025-03-04",
+      "name": "Carnaval",
+      "type": "cultural"
+    },
+    {
+      "id": "sexta-feira-santa-2025",
+      "date": "2025-04-18",
+      "name": "Sexta-feira Santa",
+      "type": "religious"
+    },
+    {
+      "id": "tiradentes-2025",
+      "date": "2025-04-21",
+      "name": "Tiradentes",
+      "type": "federal"
+    },
+    {
+      "id": "dia-trabalho-2025",
+      "date": "2025-05-01",
+      "name": "Dia do Trabalho",
+      "type": "federal"
+    },
+    {
+      "id": "dia-maes-2025",
+      "date": "2025-05-11",
+      "name": "Dia das Mães",
+      "type": "commercial"
+    },
+    {
+      "id": "festa-junina-2025",
+      "date": "2025-06-24",
+      "name": "Festa Junina",
+      "type": "cultural"
+    },
+    {
+      "id": "independencia-2025",
+      "date": "2025-09-07",
+      "name": "Independência do Brasil",
+      "type": "federal"
+    },
+    {
+      "id": "nossa-senhora-2025",
+      "date": "2025-10-12",
+      "name": "Nossa Senhora Aparecida",
+      "type": "religious"
+    },
+    {
+      "id": "finados-2025",
+      "date": "2025-11-02",
+      "name": "Finados",
+      "type": "religious"
+    },
+    {
+      "id": "proclamacao-republica-2025",
+      "date": "2025-11-15",
+      "name": "Proclamação da República",
+      "type": "federal"
+    },
+    {
+      "id": "consciencia-negra-2025",
+      "date": "2025-11-20",
+      "name": "Consciência Negra",
+      "type": "federal"
+    },
+    {
+      "id": "natal-2025",
+      "date": "2025-12-25",
+      "name": "Natal",
+      "type": "religious"
+    }
+  ]
+}

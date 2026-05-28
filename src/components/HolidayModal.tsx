@@ -8,6 +8,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 import { 
   Calendar, 
   Clock, 
@@ -16,8 +17,10 @@ import {
   Share2, 
   Bookmark,
   ChefHat,
-  Info
+  Info,
+  ExternalLink
 } from "lucide-react";
+import { NATIONAL_HOLIDAY_GUIDES } from "@/data/national-holiday-guides";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { cn } from "@/lib/utils";
@@ -60,6 +63,9 @@ export function HolidayModal({ holiday, isOpen, onClose }: HolidayModalProps) {
 
   const config = holidayTypeConfig[holiday.type];
   const holidayDate = new Date(holiday.date);
+  const guideSlug = NATIONAL_HOLIDAY_GUIDES.find(
+    (g) => holiday.id.includes(g.slug) || holiday.name.includes(g.name)
+  )?.slug;
 
   const handleShare = () => {
     if (navigator.share) {
@@ -210,6 +216,18 @@ export function HolidayModal({ holiday, isOpen, onClose }: HolidayModalProps) {
                 </div>
               </div>
             </>
+          )}
+
+          {guideSlug && (
+            <div className="pt-2">
+              <Link
+                to={`/feriado/${guideSlug}`}
+                className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
+              >
+                Ver guia completo de {holiday.name}
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            </div>
           )}
         </div>
       </DialogContent>

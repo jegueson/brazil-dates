@@ -1,25 +1,7 @@
 User-agent: *
 Allow: /
 
-# Allow specific bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Disallow admin areas (if any exist in the future)
-Disallow: /admin/
-Disallow: /private/
-
-# Sitemap location
 Sitemap: https://calendario-feriados.com.br/sitemap.xml
 
-# Crawl delay
-Crawl-delay: 1
+# Public API for developers
+Allow: /api/

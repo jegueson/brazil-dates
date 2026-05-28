@@ -1,0 +1,94 @@
+{
+  "year": 2026,
+  "generatedAt": "2026-05-28T17:06:08.073Z",
+  "source": "https://calendario-feriados.com.br",
+  "license": "CC BY 4.0 — attribution required",
+  "federal": [
+    {
+      "id": "ano-novo-2026",
+      "date": "2026-01-01",
+      "name": "Ano Novo",
+      "type": "federal"
+    },
+    {
+      "id": "tiradentes-2026",
+      "date": "2026-04-21",
+      "name": "Tiradentes",
+      "type": "federal"
+    },
+    {
+      "id": "dia-trabalho-2026",
+      "date": "2026-05-01",
+      "name": "Dia do Trabalho",
+      "type": "federal"
+    },
+    {
+      "id": "independencia-2026",
+      "date": "2026-09-07",
+      "name": "Independência do Brasil",
+      "type": "federal"
+    },
+    {
+      "id": "proclamacao-republica-2026",
+      "date": "2026-11-15",
+      "name": "Proclamação da República",
+      "type": "federal"
+    }
+  ],
+  "all": [
+    {
+      "id": "ano-novo-2026",
+      "date": "2026-01-01",
+      "name": "Ano Novo",
+      "type": "federal"
+    },
+    {
+      "id": "carnaval-2026",
+      "date": "2026-02-17",
+      "name": "Carnaval",
+      "type": "cultural"
+    },
+    {
+      "id": "tiradentes-2026",
+      "date": "2026-04-21",
+      "name": "Tiradentes",
+      "type": "federal"
+    },
+    {
+      "id": "dia-trabalho-2026",
+      "date": "2026-05-01",
+      "name": "Dia do Trabalho",
+      "type": "federal"
+    },
+    {
+      "id": "independencia-2026",
+      "date": "2026-09-07",
+      "name": "Independência do Brasil",
+      "type": "federal"
+    },
+    {
+      "id": "nossa-senhora-2026",
+      "date": "2026-10-12",
+      "name": "Nossa Senhora Aparecida",
+      "type": "religious"
+    },
+    {
+      "id": "finados-2026",
+      "date": "2026-11-02",
+      "name": "Finados",
+      "type": "religious"
+    },
+    {
+      "id": "proclamacao-republica-2026",
+      "date": "2026-11-15",
+      "name": "Proclamação da República",
+      "type": "federal"
+    },
+    {
+      "id": "natal-2026",
+      "date": "2026-12-25",
+      "name": "Natal",
+      "type": "religious"
+    }
+  ]
+}
