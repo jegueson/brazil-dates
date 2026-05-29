@@ -11,6 +11,10 @@ const EmendasFeriado = () => {
 
   if (Number.isNaN(year) || year < 2020 || year > 2040) return <NotFound />;
 
+  return <EmendasFeriadoContent year={year} />;
+};
+
+const EmendasFeriadoContent = ({ year }: { year: number }) => {
   const bridges = getBridgeOpportunities(year);
 
   useSEO({

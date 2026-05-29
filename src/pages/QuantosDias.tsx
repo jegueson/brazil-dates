@@ -10,31 +10,54 @@ import NotFound from "./NotFound";
 const CURRENT_YEAR = new Date().getFullYear();
 
 const QuantosDias = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug, year: yearParam } = useParams<{ slug: string; year?: string }>();
   const guide = slug ? getHolidayGuideBySlug(slug) : undefined;
 
   if (!guide) return <NotFound />;
 
-  let nextDate = getHolidayDateForYear(guide, CURRENT_YEAR);
-  if (nextDate < new Date()) {
-    nextDate = getHolidayDateForYear(guide, CURRENT_YEAR + 1);
-  }
-  const remaining = daysUntil(nextDate);
-  const canonical = `${SITE_URL}/quantos-dias-faltam/${guide.slug}`;
+  const focusYear = yearParam ? parseInt(yearParam, 10) : CURRENT_YEAR;
+  if (Number.isNaN(focusYear) || focusYear < 2020 || focusYear > 2035) return <NotFound />;
+
+  return (
+    <QuantosDiasContent guide={guide} focusYear={focusYear} yearParam={yearParam} />
+  );
+};
+
+const QuantosDiasContent = ({
+  guide,
+  focusYear,
+  yearParam,
+}: {
+  guide: NonNullable<ReturnType<typeof getHolidayGuideBySlug>>;
+  focusYear: number;
+  yearParam?: string;
+}) => {
+  const targetDate = getHolidayDateForYear(guide, focusYear);
+  const remaining = daysUntil(targetDate);
+  const canonical = yearParam
+    ? `${SITE_URL}/quantos-dias-faltam/${guide.slug}/${focusYear}`
+    : `${SITE_URL}/quantos-dias-faltam/${guide.slug}`;
 
   useSEO({
-    title: `Quantos dias faltam para ${guide.name}? Contagem regressiva`,
-    description: `Faltam ${remaining} dias para ${guide.name}. Data: ${formatDateBR(nextDate)}.`,
+    title: yearParam
+      ? `Quantos dias faltam para ${guide.name} em ${focusYear}?`
+      : `Quantos dias faltam para ${guide.name}? Contagem regressiva`,
+    description: `Faltam ${remaining > 0 ? remaining : 0} dias para ${guide.name}${yearParam ? ` em ${focusYear}` : ""}. Data: ${formatDateBR(targetDate)}.`,
     canonical,
   });
 
   return (
     <ArticleLayout
-      title={`Quantos dias faltam para ${guide.name}?`}
-      subtitle="Contagem regressiva em tempo real"
+      title={
+        yearParam
+          ? `Quantos dias faltam para ${guide.name} em ${focusYear}?`
+          : `Quantos dias faltam para ${guide.name}?`
+      }
+      subtitle="Contagem regressiva"
       breadcrumbs={[
         { title: guide.name, href: `/feriado/${guide.slug}` },
-        { title: "Contagem" },
+        { title: "Contagem", href: `/quantos-dias-faltam/${guide.slug}` },
+        ...(yearParam ? [{ title: String(focusYear) }] : []),
       ]}
     >
       <div className="text-center py-12 rounded-xl border-2 border-primary/30 bg-primary/5 not-prose">
@@ -43,16 +66,19 @@ const QuantosDias = () => {
           {remaining === 1 ? "dia restante" : "dias restantes"}
         </p>
         <p className="mt-4 text-lg">
-          Próximo {guide.name}: <strong>{formatDateBR(nextDate)}</strong> (
-          {formatWeekdayBR(nextDate)})
+          {guide.name} em {focusYear}: <strong>{formatDateBR(targetDate)}</strong> (
+          {formatWeekdayBR(targetDate)})
         </p>
       </div>
 
       <p className="text-muted-foreground leading-relaxed">
-        Use esta contagem para planejar viagens, folgas ou celebrações. O {guide.name} é
-        uma das datas mais buscadas no calendário brasileiro. Saiba mais no{" "}
+        Use esta contagem para planejar viagens, folgas ou celebrações. Saiba mais no{" "}
         <Link to={`/feriado/${guide.slug}`} className="text-primary hover:underline">
           guia completo
+        </Link>{" "}
+        ou em{" "}
+        <Link to={`/quando-e/${guide.slug}/${focusYear}`} className="text-primary hover:underline">
+          quando é {guide.name} em {focusYear}
         </Link>
         .
       </p>

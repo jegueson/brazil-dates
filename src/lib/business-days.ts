@@ -74,7 +74,7 @@ export function addBusinessDays(
   businessDaysToAdd: number,
   state?: string
 ): Date {
-  let current = new Date(start);
+  const current = new Date(start);
   let added = 0;
   const maxIterations = businessDaysToAdd * 3 + 365;
 

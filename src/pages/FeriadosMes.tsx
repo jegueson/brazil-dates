@@ -28,6 +28,20 @@ const FeriadosMes = () => {
     return <NotFound />;
   }
 
+  return (
+    <FeriadosMesContent year={year} monthNum={monthNum} monthParam={monthParam} />
+  );
+};
+
+const FeriadosMesContent = ({
+  year,
+  monthNum,
+  monthParam,
+}: {
+  year: number;
+  monthNum: number;
+  monthParam: string;
+}) => {
   const monthName = MONTH_NAMES[monthParam as keyof typeof MONTH_NAMES];
   const canonical = `${SITE_URL}/feriados/${year}/${monthParam}`;
 
