@@ -1,4 +1,5 @@
 import { regionalHolidaysExtra } from "./regional-holidays-extra";
+import { regionalHolidaysPhase2 } from "./regional-holidays-phase2";
 
 export interface RegionalHoliday {
   id: string;
@@ -589,6 +590,7 @@ export const regionalHolidays: RegionalHoliday[] = [
 const allRegionalHolidays: RegionalHoliday[] = [
   ...regionalHolidays,
   ...regionalHolidaysExtra,
+  ...regionalHolidaysPhase2,
 ];
 
 export const getRegionalHolidaysByState = (state: string): RegionalHoliday[] => {
@@ -610,3 +612,8 @@ export const getAllStates = (): string[] => {
 export const getAllRegions = (): string[] => {
   return [...new Set(allRegionalHolidays.map((holiday) => holiday.region))];
 };
+
+export const getAllRegionalHolidays = (): RegionalHoliday[] => allRegionalHolidays;
+
+export const getRegionalHolidayById = (id: string): RegionalHoliday | undefined =>
+  allRegionalHolidays.find((h) => h.id === id);

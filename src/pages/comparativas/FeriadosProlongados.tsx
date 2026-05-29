@@ -4,14 +4,17 @@ import { SITE_URL } from "@/lib/site-config";
 import { ArticleLayout } from "@/components/content/ArticleLayout";
 import { getBridgeOpportunities } from "@/lib/holiday-utils";
 
-const FeriadosProlongados = () => {
-  const year = 2026;
+type FeriadosProlongadosProps = {
+  year?: number;
+};
+
+const FeriadosProlongados = ({ year = 2026 }: FeriadosProlongadosProps) => {
   const bridges = getBridgeOpportunities(year);
 
   useSEO({
     title: `Feriados Prolongados ${year} — Emendas e Pontes no Brasil`,
     description: `Lista de feriados ${year} que permitem emenda para folga prolongada. Planeje viagens.`,
-    canonical: `${SITE_URL}/feriados-prolongados-2026`,
+    canonical: `${SITE_URL}/feriados-prolongados-${year}`,
   });
 
   return (

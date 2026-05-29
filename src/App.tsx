@@ -39,6 +39,10 @@ import WidgetEmbed from "./pages/tools/WidgetEmbed";
 import Imprimir from "./pages/tools/Imprimir";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
+import FeriadoRegional from "./pages/FeriadoRegional";
+import Regiao from "./pages/Regiao";
+import CidadesIndex from "./pages/CidadesIndex";
+import RegionalCidades from "./pages/RegionalCidades";
 
 const queryClient = new QueryClient();
 
@@ -69,11 +73,17 @@ const App = () => (
             <Route path="/privacidade" element={<Privacidade />} />
             <Route path="/termos" element={<Termos />} />
             <Route path="/regionais" element={<Regionais />} />
+            <Route path="/cidades" element={<CidadesIndex />} />
+            <Route path="/regiao/:slug" element={<Regiao />} />
+            <Route path="/regional/:state/cidades" element={<RegionalCidades />} />
             <Route path="/regional/:state" element={<Regional />} />
+            <Route path="/feriado-regional/:id" element={<FeriadoRegional />} />
             <Route path="/feriado/:slug" element={<Feriado />} />
             <Route path="/feriados/:year" element={<FeriadosAno />} />
             <Route path="/feriados/:year/:month" element={<FeriadosMes />} />
+            <Route path="/quando-e/:slug/:year" element={<QuandoE />} />
             <Route path="/quando-e/:slug" element={<QuandoE />} />
+            <Route path="/quantos-dias-faltam/:slug/:year" element={<QuantosDias />} />
             <Route path="/quantos-dias-faltam/:slug" element={<QuantosDias />} />
             <Route path="/perguntas-frequentes" element={<PerguntasFrequentes />} />
             <Route path="/equipe" element={<Equipe />} />
@@ -81,10 +91,19 @@ const App = () => (
             <Route path="/como-apuramos-as-datas" element={<ComoApuramos />} />
             <Route path="/cidade/:slug" element={<Cidade />} />
             <Route path="/qual-estado-tem-mais-feriados" element={<QualEstadoMaisFeriados />} />
-            <Route path="/feriados-prolongados-2026" element={<FeriadosProlongados />} />
-            <Route path="/pontos-facultativos-2026" element={<PontosFacultativos />} />
+            <Route path="/feriados-prolongados-2025" element={<FeriadosProlongados year={2025} />} />
+            <Route path="/feriados-prolongados-2026" element={<FeriadosProlongados year={2026} />} />
+            <Route path="/feriados-prolongados-2027" element={<FeriadosProlongados year={2027} />} />
+            <Route path="/feriados-prolongados-2028" element={<FeriadosProlongados year={2028} />} />
+            <Route path="/pontos-facultativos-2025" element={<PontosFacultativos year={2025} />} />
+            <Route path="/pontos-facultativos-2026" element={<PontosFacultativos year={2026} />} />
+            <Route path="/pontos-facultativos-2027" element={<PontosFacultativos year={2027} />} />
+            <Route path="/pontos-facultativos-2028" element={<PontosFacultativos year={2028} />} />
             <Route path="/feriado-bancario-vs-feriado-nacional" element={<FeriadoBancario />} />
-            <Route path="/feriado-cai-em-fim-de-semana-2026" element={<FimDeSemana />} />
+            <Route path="/feriado-cai-em-fim-de-semana-2025" element={<FimDeSemana year={2025} />} />
+            <Route path="/feriado-cai-em-fim-de-semana-2026" element={<FimDeSemana year={2026} />} />
+            <Route path="/feriado-cai-em-fim-de-semana-2027" element={<FimDeSemana year={2027} />} />
+            <Route path="/feriado-cai-em-fim-de-semana-2028" element={<FimDeSemana year={2028} />} />
             <Route path="/calculadora-dias-uteis" element={<CalculadoraDiasUteis />} />
             <Route path="/calculadora-prazos" element={<CalculadoraPrazos />} />
             <Route path="/planejador-de-ferias" element={<PlanejadorFerias />} />

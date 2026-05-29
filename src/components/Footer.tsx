@@ -24,6 +24,8 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/feriados/2026" className="text-muted-foreground hover:text-primary">Feriados 2026</Link></li>
               <li><Link to="/feriados/2027" className="text-muted-foreground hover:text-primary">Feriados 2027</Link></li>
+              <li><Link to="/feriados/2028" className="text-muted-foreground hover:text-primary">Feriados 2028</Link></li>
+              <li><Link to="/cidades" className="text-muted-foreground hover:text-primary">Por cidade</Link></li>
               <li><Link to="/regionais" className="text-muted-foreground hover:text-primary">Por estado</Link></li>
               <li><Link to="/perguntas-frequentes" className="text-muted-foreground hover:text-primary">FAQ</Link></li>
             </ul>

@@ -1,4 +1,6 @@
-/** Top 50 Brazilian cities by population — municipal holidays and local culture. */
+import { BRAZIL_CITIES_PHASE2 } from "./brazil-cities-phase2";
+
+/** Top 100 Brazilian cities by population — municipal holidays and local culture. */
 
 export interface BrazilCityInfo {
   name: string;
@@ -62,6 +64,7 @@ export const BRAZIL_CITIES: BrazilCityInfo[] = [
   { name: "Santos", slug: "santos", state: "São Paulo", stateSlug: "sao-paulo", population: "433 mil", foundationDate: "26 de janeiro", description: "Maior porto da América Latina.", culturalContent: "Carnaval santista e história do futebol (Santos FC).", municipalHolidays: [] },
   { name: "Vitória", slug: "vitoria", state: "Espírito Santo", stateSlug: "espirito-santo", population: "369 mil", foundationDate: "8 de setembro", description: "Capital capixaba.", culturalContent: "Vitória e Vila Velha celebram Nossa Senhora da Penha e festas de pescadores.", municipalHolidays: [] },
   { name: "Blumenau", slug: "blumenau", state: "Santa Catarina", stateSlug: "santa-catarina", population: "366 mil", foundationDate: "2 de setembro", description: "Oktoberfest brasileira.", culturalContent: "Blumenau é famosa pela Oktoberfest em outubro, maior festa alemã das Américas.", municipalHolidays: [] },
+  ...BRAZIL_CITIES_PHASE2,
 ];
 
 export function getCityBySlug(slug: string): BrazilCityInfo | undefined {

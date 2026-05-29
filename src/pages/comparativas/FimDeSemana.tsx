@@ -5,17 +5,19 @@ import { NATIONAL_HOLIDAY_GUIDES } from "@/data/national-holiday-guides";
 import { getHolidayDateString } from "@/lib/holiday-dates";
 import { formatWeekdayBR } from "@/lib/holiday-utils";
 
-const YEAR = 2026;
+type FimDeSemanaProps = {
+  year?: number;
+};
 
-const FimDeSemana = () => {
+const FimDeSemana = ({ year = 2026 }: FimDeSemanaProps) => {
   useSEO({
-    title: `Feriados que Caem no Fim de Semana em ${YEAR}`,
-    description: `Lista de feriados nacionais ${YEAR} que coincidem com sábado ou domingo e dicas de planejamento.`,
-    canonical: `${SITE_URL}/feriado-cai-em-fim-de-semana-2026`,
+    title: `Feriados que Caem no Fim de Semana em ${year}`,
+    description: `Lista de feriados nacionais ${year} que coincidem com sábado ou domingo e dicas de planejamento.`,
+    canonical: `${SITE_URL}/feriado-cai-em-fim-de-semana-${year}`,
   });
 
   const onWeekend = NATIONAL_HOLIDAY_GUIDES.map((g) => {
-    const date = getHolidayDateString(g, YEAR);
+    const date = getHolidayDateString(g, year);
     const d = new Date(date + "T12:00:00");
     const dow = d.getDay();
     return { guide: g, date, dow, isWeekend: dow === 0 || dow === 6 };
@@ -23,16 +25,16 @@ const FimDeSemana = () => {
 
   return (
     <ArticleLayout
-      title={`Feriados no fim de semana em ${YEAR}`}
+      title={`Feriados no fim de semana em ${year}`}
       subtitle="Quando a data coincide com sábado ou domingo"
-      breadcrumbs={[{ title: `Feriados ${YEAR}`, href: `/feriados/${YEAR}` }]}
+      breadcrumbs={[{ title: `Feriados ${year}`, href: `/feriados/${year}` }]}
     >
       <p className="text-muted-foreground">
         Quando o feriado cai no sábado ou domingo, muitos trabalhadores não ganham folga
-        extra na semana — a não ser que a convenção coletiva preveja compensação. Em {YEAR}:
+        extra na semana — a não ser que a convenção coletiva preveja compensação. Em {year}:
       </p>
       {onWeekend.length === 0 ? (
-        <p className="text-muted-foreground">Nenhum feriado nacional principal cai no fim de semana em {YEAR}.</p>
+        <p className="text-muted-foreground">Nenhum feriado nacional principal cai no fim de semana em {year}.</p>
       ) : (
         <ul className="space-y-3">
           {onWeekend.map(({ guide, date, dow }) => (

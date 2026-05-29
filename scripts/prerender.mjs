@@ -74,8 +74,8 @@ async function main() {
       const outPath =
         route === "/" ? join(distDir, "index.html") : join(distDir, route, "index.html");
 
-      await page.goto(url, { waitUntil: "networkidle", timeout: 90000 });
-      await page.waitForTimeout(800);
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+      await page.waitForTimeout(400);
       const html = await page.content();
 
       mkdirSync(dirname(outPath), { recursive: true });

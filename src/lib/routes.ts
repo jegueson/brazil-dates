@@ -1,9 +1,16 @@
 import { NATIONAL_HOLIDAY_GUIDES } from "@/data/national-holiday-guides";
 import { BRAZIL_STATES } from "@/data/brazil-states";
 import { BRAZIL_CITIES } from "@/data/brazil-cities";
+import { BRAZIL_REGIONS } from "@/data/brazil-regions";
+import { getAllRegionalHolidays } from "@/data/regional-holidays";
+import { BLOG_POSTS } from "@/data/blog-posts";
 import { MONTH_SLUGS } from "@/lib/holiday-utils";
 
-/** All static routes for prerender, sitemap, and RSS. */
+const CALENDAR_YEARS = [2025, 2026, 2027, 2028];
+const WHEN_YEARS = [2025, 2026, 2027, 2028];
+const COMPARE_YEARS = [2025, 2026, 2027, 2028];
+
+/** All static routes for prerender, sitemap, and RSS. Keep in sync with scripts/routes-config.mjs */
 export function getAllPrerenderRoutes(): string[] {
   const staticPages = [
     "/",
@@ -14,66 +21,60 @@ export function getAllPrerenderRoutes(): string[] {
     "/privacidade",
     "/termos",
     "/regionais",
+    "/cidades",
     "/equipe",
     "/linha-editorial",
     "/como-apuramos-as-datas",
     "/perguntas-frequentes",
-    "/feriados/2026",
-    "/feriados/2027",
-    "/feriados/2028",
     "/qual-estado-tem-mais-feriados",
-    "/feriados-prolongados-2026",
-    "/pontos-facultativos-2026",
     "/feriado-bancario-vs-feriado-nacional",
-    "/feriado-cai-em-fim-de-semana-2026",
     "/calculadora-dias-uteis",
     "/calculadora-prazos",
     "/planejador-de-ferias",
-    "/emendas-de-feriado/2026",
-    "/emendas-de-feriado/2027",
     "/exportar",
     "/widget",
+    "/widget-embed",
     "/imprimir",
     "/blog",
+    ...CALENDAR_YEARS.map((y) => `/feriados/${y}`),
+    ...COMPARE_YEARS.map((y) => `/feriados-prolongados-${y}`),
+    ...COMPARE_YEARS.map((y) => `/pontos-facultativos-${y}`),
+    ...COMPARE_YEARS.map((y) => `/feriado-cai-em-fim-de-semana-${y}`),
+    ...[2025, 2026, 2027, 2028].map((y) => `/emendas-de-feriado/${y}`),
   ];
 
   const holidayRoutes = NATIONAL_HOLIDAY_GUIDES.map((g) => `/feriado/${g.slug}`);
   const quandoRoutes = NATIONAL_HOLIDAY_GUIDES.map((g) => `/quando-e/${g.slug}`);
-  const countdownRoutes = NATIONAL_HOLIDAY_GUIDES.map(
-    (g) => `/quantos-dias-faltam/${g.slug}`
+  const quandoYearRoutes = NATIONAL_HOLIDAY_GUIDES.flatMap((g) =>
+    WHEN_YEARS.map((y) => `/quando-e/${g.slug}/${y}`)
+  );
+  const countdownRoutes = NATIONAL_HOLIDAY_GUIDES.map((g) => `/quantos-dias-faltam/${g.slug}`);
+  const countdownYearRoutes = NATIONAL_HOLIDAY_GUIDES.flatMap((g) =>
+    WHEN_YEARS.map((y) => `/quantos-dias-faltam/${g.slug}/${y}`)
   );
   const stateRoutes = BRAZIL_STATES.map((s) => `/regional/${s.slug}`);
+  const regionRoutes = BRAZIL_REGIONS.map((r) => `/regiao/${r.slug}`);
   const cityRoutes = BRAZIL_CITIES.map((c) => `/cidade/${c.slug}`);
-
-  const monthRoutes: string[] = [];
-  for (const year of [2026, 2027]) {
-    for (const month of MONTH_SLUGS) {
-      monthRoutes.push(`/feriados/${year}/${month}`);
-    }
-  }
-
-  const blogSlugs = [
-    "carnaval-2026-datas-blocos",
-    "festa-junina-2026-tradicoes",
-    "corpus-christi-feriado-nacional",
-    "sete-de-setembro-historia",
-    "consciencia-negra-2026",
-    "reveillon-2026-2027",
-    "natal-brasil-tradicoes",
-    "aniversario-estado-feriados",
-    "calendario-escolar-2026",
-    "feriados-religiosos-vs-civis",
-  ];
-  const blogRoutes = blogSlugs.map((s) => `/blog/${s}`);
+  const regionalHolidayRoutes = getAllRegionalHolidays().map((h) => `/feriado-regional/${h.id}`);
+  const monthRoutes = [2025, 2026, 2027, 2028].flatMap((y) =>
+    MONTH_SLUGS.map((m) => `/feriados/${y}/${m}`)
+  );
+  const stateCityHubRoutes = BRAZIL_STATES.map((s) => `/regional/${s.slug}/cidades`);
+  const blogRoutes = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
 
   return [
     ...staticPages,
     ...holidayRoutes,
     ...quandoRoutes,
+    ...quandoYearRoutes,
     ...countdownRoutes,
+    ...countdownYearRoutes,
     ...stateRoutes,
+    ...regionRoutes,
     ...cityRoutes,
+    ...regionalHolidayRoutes,
     ...monthRoutes,
+    ...stateCityHubRoutes,
     ...blogRoutes,
   ];
 }

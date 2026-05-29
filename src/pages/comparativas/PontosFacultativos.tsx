@@ -2,17 +2,21 @@ import { useSEO } from "@/hooks/useSEO";
 import { SITE_URL } from "@/lib/site-config";
 import { ArticleLayout } from "@/components/content/ArticleLayout";
 
-const PontosFacultativos = () => {
+type PontosFacultativosProps = {
+  year?: number;
+};
+
+const PontosFacultativos = ({ year = 2026 }: PontosFacultativosProps) => {
   useSEO({
-    title: "Pontos Facultativos 2026 — O Que São e Quando Ocorrem",
+    title: `Pontos Facultativos ${year} — O Que São e Quando Ocorrem`,
     description:
-      "Entenda pontos facultativos no Brasil: Carnaval, Véspera de Natal e decretos federais em 2026.",
-    canonical: `${SITE_URL}/pontos-facultativos-2026`,
+      `Entenda pontos facultativos no Brasil: Carnaval, Véspera de Natal e decretos federais em ${year}.`,
+    canonical: `${SITE_URL}/pontos-facultativos-${year}`,
   });
 
   return (
     <ArticleLayout
-      title="Pontos facultativos 2026"
+      title={`Pontos facultativos ${year}`}
       subtitle="Datas em que o trabalho pode ser suspenso sem feriado nacional"
       breadcrumbs={[{ title: "Pontos facultativos" }]}
     >
