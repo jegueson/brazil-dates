@@ -13,6 +13,14 @@ const Regiao = () => {
 
   if (!region) return <NotFound />;
 
+  return <RegiaoContent region={region} />;
+};
+
+const RegiaoContent = ({
+  region,
+}: {
+  region: NonNullable<ReturnType<typeof getRegionBySlug>>;
+}) => {
   const states = BRAZIL_STATES.filter((s) => region.states.includes(s.name));
   const holidays = getRegionalHolidaysByRegion(region.name);
   const canonical = `${SITE_URL}/regiao/${region.slug}`;

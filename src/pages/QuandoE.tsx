@@ -18,6 +18,20 @@ const QuandoE = () => {
   const focusYear = yearParam ? parseInt(yearParam, 10) : CURRENT_YEAR;
   if (Number.isNaN(focusYear) || focusYear < 2020 || focusYear > 2035) return <NotFound />;
 
+  return (
+    <QuandoEContent guide={guide} focusYear={focusYear} yearParam={yearParam} />
+  );
+};
+
+const QuandoEContent = ({
+  guide,
+  focusYear,
+  yearParam,
+}: {
+  guide: NonNullable<ReturnType<typeof getHolidayGuideBySlug>>;
+  focusYear: number;
+  yearParam?: string;
+}) => {
   const focusDate = getHolidayDateForYear(guide, focusYear);
   const occurrences = getOccurrenceTable(guide, focusYear, 2, 8);
   const canonical = yearParam

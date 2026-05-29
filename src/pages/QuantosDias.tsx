@@ -18,6 +18,20 @@ const QuantosDias = () => {
   const focusYear = yearParam ? parseInt(yearParam, 10) : CURRENT_YEAR;
   if (Number.isNaN(focusYear) || focusYear < 2020 || focusYear > 2035) return <NotFound />;
 
+  return (
+    <QuantosDiasContent guide={guide} focusYear={focusYear} yearParam={yearParam} />
+  );
+};
+
+const QuantosDiasContent = ({
+  guide,
+  focusYear,
+  yearParam,
+}: {
+  guide: NonNullable<ReturnType<typeof getHolidayGuideBySlug>>;
+  focusYear: number;
+  yearParam?: string;
+}) => {
   const targetDate = getHolidayDateForYear(guide, focusYear);
   const remaining = daysUntil(targetDate);
   const canonical = yearParam

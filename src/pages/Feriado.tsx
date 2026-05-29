@@ -25,6 +25,14 @@ const Feriado = () => {
 
   if (!guide) return <NotFound />;
 
+  return <FeriadoContent guide={guide} />;
+};
+
+const FeriadoContent = ({
+  guide,
+}: {
+  guide: NonNullable<ReturnType<typeof getHolidayGuideBySlug>>;
+}) => {
   const nextDate = getHolidayDateForYear(guide, CURRENT_YEAR);
   let displayDate = nextDate;
   if (displayDate < new Date()) {

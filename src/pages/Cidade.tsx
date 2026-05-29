@@ -13,6 +13,14 @@ const Cidade = () => {
 
   if (!city) return <NotFound />;
 
+  return <CidadeContent city={city} />;
+};
+
+const CidadeContent = ({
+  city,
+}: {
+  city: NonNullable<ReturnType<typeof getCityBySlug>>;
+}) => {
   const stateHolidays = getRegionalHolidaysByState(city.state);
   const canonical = `${SITE_URL}/cidade/${city.slug}`;
 

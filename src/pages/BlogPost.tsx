@@ -12,6 +12,14 @@ const BlogPost = () => {
 
   if (!post) return <NotFound />;
 
+  return <BlogPostContent post={post} />;
+};
+
+const BlogPostContent = ({
+  post,
+}: {
+  post: NonNullable<ReturnType<typeof getBlogPost>>;
+}) => {
   const canonical = `${SITE_URL}/blog/${post.slug}`;
 
   useSEO({

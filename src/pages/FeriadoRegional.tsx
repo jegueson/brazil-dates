@@ -15,6 +15,14 @@ const FeriadoRegional = () => {
 
   if (!holiday) return <NotFound />;
 
+  return <FeriadoRegionalContent holiday={holiday} />;
+};
+
+const FeriadoRegionalContent = ({
+  holiday,
+}: {
+  holiday: NonNullable<ReturnType<typeof getRegionalHolidayById>>;
+}) => {
   const stateSlug = stateNameToSlug(holiday.state);
   const regionSlug =
     BRAZIL_REGIONS.find((r) => r.name === holiday.region)?.slug ??

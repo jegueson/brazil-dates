@@ -12,6 +12,14 @@ const RegionalCidades = () => {
 
   if (!state) return <NotFound />;
 
+  return <RegionalCidadesContent state={state} />;
+};
+
+const RegionalCidadesContent = ({
+  state,
+}: {
+  state: NonNullable<ReturnType<typeof getStateBySlug>>;
+}) => {
   const cities = BRAZIL_CITIES.filter((c) => c.state === state.name);
   const canonical = `${SITE_URL}/regional/${state.slug}/cidades`;
 

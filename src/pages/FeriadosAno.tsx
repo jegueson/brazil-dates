@@ -21,6 +21,10 @@ const FeriadosAno = () => {
     return <NotFound />;
   }
 
+  return <FeriadosAnoContent year={year} />;
+};
+
+const FeriadosAnoContent = ({ year }: { year: number }) => {
   const federal = getFederalHolidaysForYear(year);
   const bridges = getBridgeOpportunities(year);
   const canonical = `${SITE_URL}/feriados/${year}`;
