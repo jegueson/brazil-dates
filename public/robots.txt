@@ -1,7 +1,14 @@
-User-agent: *
+# Google AdSense ads crawler
+User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://calendario-feriados.com.br/sitemap.xml
+# Google Display Ads / AdSense site verification crawler
+User-agent: Google-Display-Ads-Bot
+Allow: /
 
-# Public API for developers
+# All other crawlers
+User-agent: *
+Allow: /
 Allow: /api/
+
+Sitemap: https://calendario-feriados.com.br/sitemap.xml
