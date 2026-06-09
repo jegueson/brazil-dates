@@ -6,9 +6,15 @@ Allow: /
 User-agent: Google-Display-Ads-Bot
 Allow: /
 
+# Googlebot / ads.txt crawler
+User-agent: Googlebot
+Allow: /ads.txt
+Allow: /
+
 # All other crawlers
 User-agent: *
 Allow: /
 Allow: /api/
+Allow: /ads.txt
 
-Sitemap: https://calendario-feriados.com.br/sitemap.xml
+Sitemap: https://www.calendario-feriados.com.br/sitemap.xml
