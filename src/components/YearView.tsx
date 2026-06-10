@@ -1,28 +1,21 @@
-import { format, startOfYear, endOfYear, eachMonthOfInterval, isSameMonth } from "date-fns";
-import { ptBR } from "date-fns/locale";
 import { BrazilianHoliday } from "@/data/brazilian-holidays";
-import { HolidayCard } from "./HolidayCard";
-import { Badge } from "@/components/ui/badge";
+import { YearCalendarGrid } from "./YearCalendarGrid";
 
 interface YearViewProps {
   currentDate: Date;
   holidays: BrazilianHoliday[];
   selectedHoliday: BrazilianHoliday | null;
   onHolidaySelect: (holiday: BrazilianHoliday) => void;
+  onMonthSelect?: (month: Date) => void;
 }
 
-export function YearView({ currentDate, holidays, selectedHoliday, onHolidaySelect }: YearViewProps) {
-  const yearStart = startOfYear(currentDate);
-  const yearEnd = endOfYear(currentDate);
-  const months = eachMonthOfInterval({ start: yearStart, end: yearEnd });
-
-  const getHolidaysForMonth = (month: Date) => {
-    return holidays.filter(holiday => {
-      const holidayDate = new Date(holiday.date);
-      return isSameMonth(holidayDate, month);
-    });
-  };
-
+export function YearView({
+  currentDate,
+  holidays,
+  selectedHoliday,
+  onHolidaySelect,
+  onMonthSelect,
+}: YearViewProps) {
   const totalHolidays = holidays.length;
   const federalHolidays = holidays.filter(h => h.type === 'federal').length;
   const religiousHolidays = holidays.filter(h => h.type === 'religious').length;
@@ -50,45 +43,14 @@ export function YearView({ currentDate, holidays, selectedHoliday, onHolidaySele
         </div>
       </div>
 
-      {/* Months Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {months.map(month => {
-          const monthHolidays = getHolidaysForMonth(month);
-          
-          return (
-            <div key={month.toISOString()} className="bg-card rounded-xl border shadow-sm p-4 hover:shadow-md transition-shadow">
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-semibold capitalize bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  {format(month, 'MMMM', { locale: ptBR })}
-                </h3>
-                {monthHolidays.length > 0 && (
-                  <Badge variant="secondary" className="mt-1 text-xs">
-                    {monthHolidays.length} feriado{monthHolidays.length !== 1 ? 's' : ''}
-                  </Badge>
-                )}
-              </div>
-              
-              <div className="space-y-2">
-                {monthHolidays.length > 0 ? (
-                  monthHolidays.map(holiday => (
-                    <HolidayCard
-                      key={holiday.id}
-                      holiday={holiday}
-                      onClick={() => onHolidaySelect(holiday)}
-                      isSelected={selectedHoliday?.id === holiday.id}
-                      view="year"
-                    />
-                  ))
-                ) : (
-                  <div className="text-center py-8 text-muted-foreground">
-                    <div className="text-xs opacity-60">Nenhum feriado</div>
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      {/* Full year calendar grid */}
+      <YearCalendarGrid
+        currentDate={currentDate}
+        holidays={holidays}
+        selectedHoliday={selectedHoliday}
+        onHolidaySelect={onHolidaySelect}
+        onMonthSelect={onMonthSelect}
+      />
 
       {/* Analysis Section */}
       <div className="bg-gradient-to-br from-card via-muted/20 to-card rounded-xl p-6 border">

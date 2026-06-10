@@ -210,3 +210,24 @@
     @apply backdrop-blur-sm bg-white/80 dark:bg-black/20 border border-white/20 dark:border-white/10;
   }
 }
+
+/* Print: clean 12-month year calendar */
+@media print {
+  header,
+  footer,
+  .ad-zone,
+  .ad-banner {
+    display: none !important;
+  }
+
+  .year-print-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .year-print-grid > * {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+}

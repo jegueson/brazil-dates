@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { 
   format, 
   startOfMonth, 
@@ -12,12 +12,10 @@ import {
   subMonths,
   isToday,
   addYears,
-  subYears,
-  startOfYear,
-  endOfYear
+  subYears
 } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Grid3X3, List, CalendarDays } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar as CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HolidayCard } from "./HolidayCard";
@@ -27,15 +25,57 @@ import { PrintCalendar } from "./PrintCalendar";
 import { BrazilianHoliday, getHolidaysByMonth, getHolidaysByYear } from "@/data/brazilian-holidays";
 import { cn } from "@/lib/utils";
 
+export type CalendarView = 'month' | 'list' | 'year';
+
 interface CalendarProps {
   selectedHoliday: BrazilianHoliday | null;
   onHolidaySelect: (holiday: BrazilianHoliday) => void;
-  view: 'month' | 'list' | 'year';
-  onViewChange: (view: 'month' | 'list' | 'year') => void;
+  view: CalendarView;
+  onViewChange: (view: CalendarView) => void;
+  currentDate?: Date;
+  onDateChange?: (date: Date) => void;
 }
 
-export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange }: CalendarProps) {
-  const [currentDate, setCurrentDate] = useState(new Date());
+const VIEW_OPTIONS: Array<{ value: CalendarView; label: string }> = [
+  { value: 'year', label: 'Ano completo' },
+  { value: 'month', label: 'Mês a mês' },
+  { value: 'list', label: 'Lista' },
+];
+
+function ViewToggle({ view, onViewChange }: { view: CalendarView; onViewChange: (view: CalendarView) => void }) {
+  return (
+    <div role="group" aria-label="Modo de visualização" className="inline-flex rounded-lg border bg-card p-1 gap-1">
+      {VIEW_OPTIONS.map((option) => (
+        <Button
+          key={option.value}
+          size="sm"
+          variant={view === option.value ? 'default' : 'ghost'}
+          aria-pressed={view === option.value}
+          onClick={() => onViewChange(option.value)}
+          className="text-xs sm:text-sm"
+        >
+          {option.label}
+        </Button>
+      ))}
+    </div>
+  );
+}
+
+export function Calendar({
+  selectedHoliday,
+  onHolidaySelect,
+  view,
+  onViewChange,
+  currentDate: controlledDate,
+  onDateChange,
+}: CalendarProps) {
+  const [internalDate, setInternalDate] = useState(new Date());
+  const currentDate = controlledDate ?? internalDate;
+  const setCurrentDate = (date: Date) => {
+    setInternalDate(date);
+    onDateChange?.(date);
+  };
+
   const [holidays, setHolidays] = useState<BrazilianHoliday[]>([]);
 
   useEffect(() => {
@@ -82,38 +122,41 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
     }
   };
 
+  // Parse as local time so the day doesn't shift in negative-UTC timezones (Brazil).
   const getHolidayForDate = (date: Date): BrazilianHoliday | undefined => {
     return holidays.find(holiday => 
-      isSameDay(new Date(holiday.date), date)
+      isSameDay(new Date(holiday.date + 'T00:00:00'), date)
     );
   };
 
   const navigateMonth = (direction: 'prev' | 'next') => {
-    setCurrentDate(prev => 
-      direction === 'prev' ? subMonths(prev, 1) : addMonths(prev, 1)
-    );
+    setCurrentDate(direction === 'prev' ? subMonths(currentDate, 1) : addMonths(currentDate, 1));
   };
 
   const navigateYear = (direction: 'prev' | 'next') => {
-    setCurrentDate(prev => 
-      direction === 'prev' ? subYears(prev, 1) : addYears(prev, 1)
-    );
+    setCurrentDate(direction === 'prev' ? subYears(currentDate, 1) : addYears(currentDate, 1));
   };
 
   const goToToday = () => {
     setCurrentDate(new Date());
   };
 
+  const handleMonthSelect = (month: Date) => {
+    setCurrentDate(month);
+    onViewChange('month');
+  };
+
   if (view === 'year') {
     return (
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-4">
             <Button
               variant="outline"
               size="icon"
               onClick={() => navigateYear('prev')}
+              aria-label="Ano anterior"
               className="hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -125,33 +168,21 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
               variant="outline"
               size="icon"
               onClick={() => navigateYear('next')}
+              aria-label="Próximo ano"
               className="hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <ViewToggle view={view} onViewChange={onViewChange} />
             <Button variant="outline" size="sm" onClick={goToToday}>
               <CalendarIcon className="w-4 h-4 mr-2" />
               Hoje
             </Button>
             <SocialShare title={`Feriados Brasileiros - ${format(currentDate, 'yyyy')}`} />
             <PrintCalendar currentDate={currentDate} holidays={holidays} view="year" />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => onViewChange('month')}
-            >
-              <Grid3X3 className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => onViewChange('list')}
-            >
-              <List className="w-4 h-4" />
-            </Button>
           </div>
         </div>
 
@@ -160,6 +191,7 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
           holidays={holidays}
           selectedHoliday={selectedHoliday}
           onHolidaySelect={onHolidaySelect}
+          onMonthSelect={handleMonthSelect}
         />
       </div>
     );
@@ -169,12 +201,13 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
     return (
       <div className="space-y-4">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-4">
             <Button
               variant="outline"
               size="icon"
               onClick={() => navigateMonth('prev')}
+              aria-label="Mês anterior"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
@@ -185,24 +218,19 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
               variant="outline"
               size="icon"
               onClick={() => navigateMonth('next')}
+              aria-label="Próximo mês"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <ViewToggle view={view} onViewChange={onViewChange} />
             <Button variant="outline" size="sm" onClick={goToToday}>
               Hoje
             </Button>
             <SocialShare title={`Feriados - ${format(currentDate, 'MMMM yyyy', { locale: ptBR })}`} />
             <PrintCalendar currentDate={currentDate} holidays={holidays} view="month" />
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => onViewChange('month')}
-            >
-              <Grid3X3 className="w-4 h-4" />
-            </Button>
           </div>
         </div>
 
@@ -232,12 +260,13 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-4">
           <Button
             variant="outline"
             size="icon"
             onClick={() => navigateMonth('prev')}
+            aria-label="Mês anterior"
             className="hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -249,34 +278,21 @@ export function Calendar({ selectedHoliday, onHolidaySelect, view, onViewChange 
             variant="outline"
             size="icon"
             onClick={() => navigateMonth('next')}
+            aria-label="Próximo mês"
             className="hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>
         
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <ViewToggle view={view} onViewChange={onViewChange} />
           <Button variant="outline" size="sm" onClick={goToToday}>
             <CalendarIcon className="w-4 h-4 mr-2" />
             Hoje
           </Button>
           <SocialShare title={`Feriados - ${format(currentDate, 'MMMM yyyy', { locale: ptBR })}`} />
           <PrintCalendar currentDate={currentDate} holidays={holidays} view="month" />
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => onViewChange('year')}
-            title="Ver ano completo"
-          >
-            <CalendarDays className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => onViewChange('list')}
-          >
-            <List className="w-4 h-4" />
-          </Button>
         </div>
       </div>
 
