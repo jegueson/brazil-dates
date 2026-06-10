@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { HolidayModal } from "@/components/HolidayModal";
 import { HolidayCountdown } from "@/components/HolidayCountdown";
 import { SearchBar } from "@/components/SearchBar";
@@ -6,7 +6,7 @@ import { MobileNavigation } from "@/components/MobileNavigation";
 import { Footer } from "@/components/Footer";
 import { BrazilianHoliday } from "@/data/brazilian-holidays";
 import { Flag } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useSEO, seoConfigs } from "@/hooks/useSEO";
 import { NATIONAL_HOLIDAY_GUIDES } from "@/data/national-holiday-guides";
 
@@ -16,10 +16,64 @@ const Calendar = lazy(() =>
 
 const CURRENT_YEAR = new Date().getFullYear();
 
+type CalendarView = "month" | "list" | "year";
+
+function parseViewParam(value: string | null): CalendarView {
+  return value === "year" || value === "list" || value === "month" ? value : "year";
+}
+
+function parseDateParams(params: URLSearchParams): Date {
+  const month = params.get("m");
+  if (month && /^\d{4}-\d{2}$/.test(month)) {
+    const parsed = new Date(Number(month.slice(0, 4)), Number(month.slice(5, 7)) - 1, 1);
+    if (!Number.isNaN(parsed.getTime())) return parsed;
+  }
+  const year = params.get("y");
+  if (year && /^\d{4}$/.test(year)) {
+    return new Date(Number(year), 0, 1);
+  }
+  return new Date();
+}
+
 const Index = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedHoliday, setSelectedHoliday] = useState<BrazilianHoliday | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [calendarView, setCalendarView] = useState<"month" | "list" | "year">("month");
+  const [calendarView, setCalendarView] = useState<CalendarView>(() =>
+    parseViewParam(searchParams.get("view"))
+  );
+  const [currentDate, setCurrentDate] = useState<Date>(() => parseDateParams(searchParams));
+
+  // Keep view and date shareable via URL (e.g. /?view=year&y=2026).
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    const now = new Date();
+    const isDefault =
+      calendarView === "year" &&
+      currentDate.getFullYear() === now.getFullYear();
+
+    if (isDefault) {
+      params.delete("view");
+      params.delete("y");
+      params.delete("m");
+    } else {
+      params.set("view", calendarView);
+      if (calendarView === "year") {
+        params.set("y", String(currentDate.getFullYear()));
+        params.delete("m");
+      } else {
+        params.set(
+          "m",
+          `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}`
+        );
+        params.delete("y");
+      }
+    }
+    if (params.toString() !== searchParams.toString()) {
+      setSearchParams(params, { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calendarView, currentDate]);
 
   useSEO({
     ...seoConfigs.home,
@@ -135,6 +189,8 @@ const Index = () => {
                 onHolidaySelect={handleHolidaySelect}
                 view={calendarView}
                 onViewChange={setCalendarView}
+                currentDate={currentDate}
+                onDateChange={setCurrentDate}
               />
             </Suspense>
           </div>

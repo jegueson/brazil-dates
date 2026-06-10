@@ -1,6 +1,6 @@
 {
   "year": 2028,
-  "generatedAt": "2026-05-28T17:06:08.073Z",
+  "generatedAt": "2026-06-10T07:20:52.639Z",
   "source": "https://calendario-feriados.com.br",
   "license": "CC BY 4.0 — attribution required",
   "federal": [
@@ -55,6 +55,12 @@
       "type": "cultural"
     },
     {
+      "id": "sexta-feira-santa-2028",
+      "date": "2028-04-14",
+      "name": "Sexta-feira Santa",
+      "type": "religious"
+    },
+    {
       "id": "tiradentes-2028",
       "date": "2028-04-21",
       "name": "Tiradentes",
@@ -65,6 +71,12 @@
       "date": "2028-05-01",
       "name": "Dia do Trabalho",
       "type": "federal"
+    },
+    {
+      "id": "corpus-christi-2028",
+      "date": "2028-06-15",
+      "name": "Corpus Christi",
+      "type": "religious"
     },
     {
       "id": "independencia-2028",

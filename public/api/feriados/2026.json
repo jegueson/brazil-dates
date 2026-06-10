@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "generatedAt": "2026-05-28T17:06:08.073Z",
+  "generatedAt": "2026-06-10T07:20:52.639Z",
   "source": "https://calendario-feriados.com.br",
   "license": "CC BY 4.0 — attribution required",
   "federal": [
@@ -33,6 +33,12 @@
       "date": "2026-11-15",
       "name": "Proclamação da República",
       "type": "federal"
+    },
+    {
+      "id": "consciencia-negra-2026",
+      "date": "2026-11-20",
+      "name": "Dia da Consciência Negra",
+      "type": "federal"
     }
   ],
   "all": [
@@ -49,6 +55,12 @@
       "type": "cultural"
     },
     {
+      "id": "sexta-feira-santa-2026",
+      "date": "2026-04-03",
+      "name": "Sexta-feira Santa",
+      "type": "religious"
+    },
+    {
       "id": "tiradentes-2026",
       "date": "2026-04-21",
       "name": "Tiradentes",
@@ -59,6 +71,12 @@
       "date": "2026-05-01",
       "name": "Dia do Trabalho",
       "type": "federal"
+    },
+    {
+      "id": "corpus-christi-2026",
+      "date": "2026-06-04",
+      "name": "Corpus Christi",
+      "type": "religious"
     },
     {
       "id": "independencia-2026",
@@ -82,6 +100,12 @@
       "id": "proclamacao-republica-2026",
       "date": "2026-11-15",
       "name": "Proclamação da República",
+      "type": "federal"
+    },
+    {
+      "id": "consciencia-negra-2026",
+      "date": "2026-11-20",
+      "name": "Dia da Consciência Negra",
       "type": "federal"
     },
     {

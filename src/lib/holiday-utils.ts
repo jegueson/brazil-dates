@@ -1,4 +1,5 @@
-import { brazilianHolidays, BrazilianHoliday } from "@/data/brazilian-holidays";
+import { BrazilianHoliday } from "@/data/brazilian-holidays";
+import { getAllHolidaysForYear } from "@/lib/national-holidays";
 import { differenceInCalendarDays, format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -62,7 +63,7 @@ export function daysUntil(date: Date | string): number {
 }
 
 export function getHolidaysForYear(year: number): BrazilianHoliday[] {
-  return brazilianHolidays.filter((h) => h.date.startsWith(String(year)));
+  return getAllHolidaysForYear(year);
 }
 
 export function getFederalHolidaysForYear(year: number): BrazilianHoliday[] {

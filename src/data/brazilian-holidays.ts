@@ -1,3 +1,5 @@
+import { getAllHolidaysForMonth, getAllHolidaysForYear } from "@/lib/national-holidays";
+
 export interface BrazilianHoliday {
   id: string;
   date: string;
@@ -2214,38 +2216,38 @@ export const brazilianHolidays: BrazilianHoliday[] = [
   }
 ];
 
+// Delegated to the unified resolver so computed national holidays
+// (e.g. Corpus Christi) are never missing from the interactive calendar.
 export const getHolidaysByMonth = (year: number, month: number): BrazilianHoliday[] => {
-  return brazilianHolidays.filter(holiday => {
-    const holidayDate = new Date(holiday.date);
-    return holidayDate.getFullYear() === year && holidayDate.getMonth() === month;
-  });
+  return getAllHolidaysForMonth(year, month);
 };
 
 export const getHolidaysByYear = (year: number): BrazilianHoliday[] => {
-  return brazilianHolidays.filter(holiday => {
-    const holidayDate = new Date(holiday.date);
-    return holidayDate.getFullYear() === year;
-  });
+  return getAllHolidaysForYear(year);
 };
 
 export const getNextHoliday = (): BrazilianHoliday | null => {
   const today = new Date();
-  const upcomingHolidays = brazilianHolidays.filter(holiday => 
-    new Date(holiday.date) > today
-  );
-  
-  if (upcomingHolidays.length === 0) return null;
-  
-  return upcomingHolidays.reduce((closest, current) => {
-    const currentDate = new Date(current.date);
-    const closestDate = new Date(closest.date);
-    return currentDate < closestDate ? current : closest;
-  });
+  const year = today.getFullYear();
+  const upcoming = [...getAllHolidaysForYear(year), ...getAllHolidaysForYear(year + 1)]
+    .filter(holiday => new Date(holiday.date) > today)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  return upcoming[0] ?? null;
 };
 
 export const searchHolidays = (query: string): BrazilianHoliday[] => {
   const searchTerm = query.toLowerCase();
-  return brazilianHolidays.filter(holiday =>
+  // Search the unified set for nearby years (includes computed national
+  // holidays), then the remaining static entries for other years.
+  const pool = new Map<string, BrazilianHoliday>();
+  const currentYear = new Date().getFullYear();
+  for (let y = currentYear; y <= currentYear + 2; y++) {
+    for (const h of getAllHolidaysForYear(y)) pool.set(h.id, h);
+  }
+  for (const h of brazilianHolidays) {
+    if (!pool.has(h.id)) pool.set(h.id, h);
+  }
+  return [...pool.values()].filter(holiday =>
     holiday.name.toLowerCase().includes(searchTerm) ||
     holiday.description.toLowerCase().includes(searchTerm) ||
     holiday.traditions.some(tradition => 
