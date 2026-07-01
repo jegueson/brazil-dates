@@ -4,18 +4,22 @@ import { Calendar } from "lucide-react";
 interface UpdatedAtProps {
   date?: string;
   author?: string;
+  showSchema?: boolean;
 }
 
 /** E-E-A-T: visible last-reviewed date and author on editorial pages. */
 export function UpdatedAt({
   date = EDITORIAL.lastReviewed,
   author = EDITORIAL.authorName,
+  showSchema = true,
 }: UpdatedAtProps) {
   const formatted = new Date(date).toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "long",
     year: "numeric",
   });
+
+  const isoDate = new Date(date).toISOString().split('T')[0];
 
   return (
     <div
@@ -24,8 +28,15 @@ export function UpdatedAt({
     >
       <Calendar className="w-4 h-4 shrink-0" />
       <span>
-        Atualizado em <strong className="text-foreground">{formatted}</strong> por{" "}
-        <strong className="text-foreground">{author}</strong>
+        Atualizado em{" "}
+        {showSchema ? (
+          <time dateTime={isoDate} className="font-semibold text-foreground">
+            {formatted}
+          </time>
+        ) : (
+          <strong className="text-foreground">{formatted}</strong>
+        )}{" "}
+        por <strong className="text-foreground">{author}</strong>
       </span>
     </div>
   );

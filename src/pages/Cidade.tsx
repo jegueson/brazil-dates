@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site-config";
 import { ArticleLayout } from "@/components/content/ArticleLayout";
 import { SchemaScript } from "@/components/content/SchemaScript";
 import { getCityBySlug } from "@/data/brazil-cities";
+import { getCityGeoCoordinates } from "@/data/brazil-cities-geo";
 import { getRegionalHolidaysByState } from "@/data/regional-holidays";
 import NotFound from "./NotFound";
 
@@ -23,6 +24,7 @@ const CidadeContent = ({
 }) => {
   const stateHolidays = getRegionalHolidaysByState(city.state);
   const canonical = `${SITE_URL}/cidade/${city.slug}`;
+  const geoCoords = getCityGeoCoordinates(city.slug);
 
   useSEO({
     title: `Feriados em ${city.name} — Calendário e Datas Municipais`,
@@ -38,9 +40,26 @@ const CidadeContent = ({
           "@context": "https://schema.org",
           "@type": "Place",
           name: city.name,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: city.name,
+            addressRegion: city.state,
+            addressCountry: "BR",
+          },
+          ...(geoCoords && {
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: geoCoords.latitude,
+              longitude: geoCoords.longitude,
+            },
+          }),
           containedInPlace: {
             "@type": "AdministrativeArea",
             name: city.state,
+            containedInPlace: {
+              "@type": "Country",
+              name: "Brasil",
+            },
           },
           description: city.culturalContent,
           url: canonical,

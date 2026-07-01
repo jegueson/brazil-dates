@@ -17,4 +17,4 @@ Allow: /
 Allow: /api/
 Allow: /ads.txt
 
-Sitemap: https://www.calendario-feriados.com.br/sitemap.xml
+Sitemap: https://calendario-feriados.com.br/sitemap.xml

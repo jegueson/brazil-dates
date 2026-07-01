@@ -1,129 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Calendário Brasileiro — Blog</title>
     <link>https://calendario-feriados.com.br/blog</link>
     <description>Feriados e cultura brasileira</description>
     <language>pt-BR</language>
+    <atom:link href="https://calendario-feriados.com.br/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>carnaval-2026-datas-blocos</title>
+      <title>Carnaval 2026 Datas Blocos</title>
       <link>https://calendario-feriados.com.br/blog/carnaval-2026-datas-blocos</link>
       <guid>https://calendario-feriados.com.br/blog/carnaval-2026-datas-blocos</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre carnaval 2026 datas blocos</description>
     </item>
     <item>
-      <title>festa-junina-2026-tradicoes</title>
+      <title>Festa Junina 2026 Tradicoes</title>
       <link>https://calendario-feriados.com.br/blog/festa-junina-2026-tradicoes</link>
       <guid>https://calendario-feriados.com.br/blog/festa-junina-2026-tradicoes</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre festa junina 2026 tradicoes</description>
     </item>
     <item>
-      <title>corpus-christi-feriado-nacional</title>
+      <title>Corpus Christi Feriado Nacional</title>
       <link>https://calendario-feriados.com.br/blog/corpus-christi-feriado-nacional</link>
       <guid>https://calendario-feriados.com.br/blog/corpus-christi-feriado-nacional</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre corpus christi feriado nacional</description>
     </item>
     <item>
-      <title>sete-de-setembro-historia</title>
+      <title>Sete De Setembro Historia</title>
       <link>https://calendario-feriados.com.br/blog/sete-de-setembro-historia</link>
       <guid>https://calendario-feriados.com.br/blog/sete-de-setembro-historia</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre sete de setembro historia</description>
     </item>
     <item>
-      <title>consciencia-negra-2026</title>
+      <title>Consciencia Negra 2026</title>
       <link>https://calendario-feriados.com.br/blog/consciencia-negra-2026</link>
       <guid>https://calendario-feriados.com.br/blog/consciencia-negra-2026</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre consciencia negra 2026</description>
     </item>
     <item>
-      <title>reveillon-2026-2027</title>
+      <title>Reveillon 2026 2027</title>
       <link>https://calendario-feriados.com.br/blog/reveillon-2026-2027</link>
       <guid>https://calendario-feriados.com.br/blog/reveillon-2026-2027</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre reveillon 2026 2027</description>
     </item>
     <item>
-      <title>natal-brasil-tradicoes</title>
+      <title>Natal Brasil Tradicoes</title>
       <link>https://calendario-feriados.com.br/blog/natal-brasil-tradicoes</link>
       <guid>https://calendario-feriados.com.br/blog/natal-brasil-tradicoes</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre natal brasil tradicoes</description>
     </item>
     <item>
-      <title>aniversario-estado-feriados</title>
+      <title>Aniversario Estado Feriados</title>
       <link>https://calendario-feriados.com.br/blog/aniversario-estado-feriados</link>
       <guid>https://calendario-feriados.com.br/blog/aniversario-estado-feriados</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre aniversario estado feriados</description>
     </item>
     <item>
-      <title>calendario-escolar-2026</title>
+      <title>Calendario Escolar 2026</title>
       <link>https://calendario-feriados.com.br/blog/calendario-escolar-2026</link>
       <guid>https://calendario-feriados.com.br/blog/calendario-escolar-2026</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre calendario escolar 2026</description>
     </item>
     <item>
-      <title>feriados-religiosos-vs-civis</title>
+      <title>Feriados Religiosos Vs Civis</title>
       <link>https://calendario-feriados.com.br/blog/feriados-religiosos-vs-civis</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-religiosos-vs-civis</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados religiosos vs civis</description>
     </item>
     <item>
-      <title>feriados-2025-calendario-completo</title>
+      <title>Feriados 2025 Calendario Completo</title>
       <link>https://calendario-feriados.com.br/blog/feriados-2025-calendario-completo</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-2025-calendario-completo</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados 2025 calendario completo</description>
     </item>
     <item>
-      <title>feriados-2027-planejamento</title>
+      <title>Feriados 2027 Planejamento</title>
       <link>https://calendario-feriados.com.br/blog/feriados-2027-planejamento</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-2027-planejamento</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados 2027 planejamento</description>
     </item>
     <item>
-      <title>feriados-2028-calendario</title>
+      <title>Feriados 2028 Calendario</title>
       <link>https://calendario-feriados.com.br/blog/feriados-2028-calendario</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-2028-calendario</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados 2028 calendario</description>
     </item>
     <item>
-      <title>pontes-feriados-como-funcionam</title>
+      <title>Pontes Feriados Como Funcionam</title>
       <link>https://calendario-feriados.com.br/blog/pontes-feriados-como-funcionam</link>
       <guid>https://calendario-feriados.com.br/blog/pontes-feriados-como-funcionam</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre pontes feriados como funcionam</description>
     </item>
     <item>
-      <title>feriados-municipais-como-consultar</title>
+      <title>Feriados Municipais Como Consultar</title>
       <link>https://calendario-feriados.com.br/blog/feriados-municipais-como-consultar</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-municipais-como-consultar</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados municipais como consultar</description>
     </item>
     <item>
-      <title>home-office-e-feriados</title>
+      <title>Home Office E Feriados</title>
       <link>https://calendario-feriados.com.br/blog/home-office-e-feriados</link>
       <guid>https://calendario-feriados.com.br/blog/home-office-e-feriados</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre home office e feriados</description>
     </item>
     <item>
-      <title>bancos-horarios-feriados</title>
+      <title>Bancos Horarios Feriados</title>
       <link>https://calendario-feriados.com.br/blog/bancos-horarios-feriados</link>
       <guid>https://calendario-feriados.com.br/blog/bancos-horarios-feriados</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre bancos horarios feriados</description>
     </item>
     <item>
-      <title>clt-feriados-direitos</title>
+      <title>Clt Feriados Direitos</title>
       <link>https://calendario-feriados.com.br/blog/clt-feriados-direitos</link>
       <guid>https://calendario-feriados.com.br/blog/clt-feriados-direitos</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre clt feriados direitos</description>
     </item>
     <item>
-      <title>feriados-nordeste-guia</title>
+      <title>Feriados Nordeste Guia</title>
       <link>https://calendario-feriados.com.br/blog/feriados-nordeste-guia</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-nordeste-guia</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados nordeste guia</description>
     </item>
     <item>
-      <title>feriados-sul-guia</title>
+      <title>Feriados Sul Guia</title>
       <link>https://calendario-feriados.com.br/blog/feriados-sul-guia</link>
       <guid>https://calendario-feriados.com.br/blog/feriados-sul-guia</guid>
-      <pubDate>Wed, 10 Jun 2026 07:20:52 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2026 17:10:58 GMT</pubDate>
+      <description>Artigo sobre feriados sul guia</description>
     </item>
   </channel>
 </rss>

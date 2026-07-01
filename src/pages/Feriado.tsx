@@ -84,10 +84,29 @@ const FeriadoContent = ({
           {
             "@context": "https://schema.org",
             "@type": "Event",
-            name: guide.name,
+            name: `${guide.name} ${displayDate.getFullYear()}`,
+            description: guide.summary.join(" "),
             startDate: dateStr,
-            location: { "@type": "Country", name: "Brasil" },
+            endDate: dateStr,
+            eventStatus: "https://schema.org/EventScheduled",
+            eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+            location: {
+              "@type": "Country",
+              name: "Brasil",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "BR"
+              }
+            },
+            organizer: {
+              "@type": "Organization",
+              name: "Governo Federal do Brasil",
+              url: "https://www.gov.br"
+            },
             url: canonical,
+            image: `${SITE_URL}/og-image.jpg`,
+            inLanguage: "pt-BR",
+            isAccessibleForFree: true
           },
           {
             "@context": "https://schema.org",
