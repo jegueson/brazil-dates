@@ -12,14 +12,16 @@ export const Footer = () => {
               Guia editorial de feriados nacionais, estaduais e ferramentas para planejar
               folgas e celebrações no Brasil.
             </p>
-            <p className="text-xs text-muted-foreground mt-3">
+            <address className="text-xs text-muted-foreground mt-3 not-italic">
               Responsável: {LEGAL_ENTITY.responsible}
               <br />
-              {LEGAL_ENTITY.email}
-            </p>
+              <a href={`mailto:${LEGAL_ENTITY.email}`} className="hover:text-primary">
+                {LEGAL_ENTITY.email}
+              </a>
+            </address>
           </div>
 
-          <div>
+          <nav aria-label="Navegação de calendários">
             <h4 className="font-semibold mb-4">Calendário</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/feriados/2026" className="text-muted-foreground hover:text-primary">Feriados 2026</Link></li>
@@ -29,9 +31,9 @@ export const Footer = () => {
               <li><Link to="/regionais" className="text-muted-foreground hover:text-primary">Por estado</Link></li>
               <li><Link to="/perguntas-frequentes" className="text-muted-foreground hover:text-primary">FAQ</Link></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Ferramentas">
             <h4 className="font-semibold mb-4">Ferramentas</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/calculadora-dias-uteis" className="text-muted-foreground hover:text-primary">Dias úteis</Link></li>
@@ -39,9 +41,9 @@ export const Footer = () => {
               <li><Link to="/exportar" className="text-muted-foreground hover:text-primary">Exportar iCal</Link></li>
               <li><Link to="/widget" className="text-muted-foreground hover:text-primary">Widget</Link></li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label="Editorial">
             <h4 className="font-semibold mb-4">Editorial</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/equipe" className="text-muted-foreground hover:text-primary">Equipe</Link></li>
@@ -50,7 +52,7 @@ export const Footer = () => {
               <li><Link to="/blog" className="text-muted-foreground hover:text-primary">Blog</Link></li>
               <li><Link to="/contato" className="text-muted-foreground hover:text-primary">Contato</Link></li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="border-t border-border pt-6 mt-8 text-center text-sm text-muted-foreground">
