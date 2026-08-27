@@ -1,0 +1,17 @@
+{
+  "name": "brazil-dates",
+  "install": "npm ci && npx playwright install chromium && ([ -f .env ] || cp .env.example .env)",
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "npm run dev",
+      "description": "Vite dev server for the Brazilian holidays app (http://localhost:8080)."
+    }
+  ],
+  "ports": [
+    {
+      "name": "dev server",
+      "port": 8080
+    }
+  ]
+}
