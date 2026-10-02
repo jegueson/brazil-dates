@@ -87,6 +87,7 @@ npm run test:e2e
 
 ### CI expectations
 
+- Pipeline validation PRs exercise the full GitHub Actions and Vercel preview flow before merging.
 - Pull requests to `main` must pass lint, typecheck, unit tests, build, and preview smoke E2E checks.
 - `main` should be protected in GitHub with:
   - required status checks
@@ -111,6 +112,7 @@ Use `.env.example` as the contract for required public variables:
 
 1. Import this GitHub repository into Vercel.
 2. Configure:
+   - Root Directory: repository root (leave empty; do **not** use `brazil-dates`)
    - Production branch: `main`
    - Automatic preview deployments for pull requests
 3. Add environment variables in all three scopes (`Development`, `Preview`, `Production`).
