@@ -57,8 +57,22 @@ async function main() {
   const preview = spawn(
     "npx",
     ["vite", "preview", "--port", String(PORT), "--host", "127.0.0.1"],
-    { cwd: root, stdio: "pipe", shell: true }
+    { cwd: root, stdio: "pipe", shell: true, detached: true }
   );
+
+  const stopPreview = () => {
+    if (!preview.pid) return;
+    try {
+      // Kill the whole process group so shell + vite exit together.
+      process.kill(-preview.pid, "SIGTERM");
+    } catch {
+      try {
+        preview.kill("SIGTERM");
+      } catch {
+        /* already exited */
+      }
+    }
+  };
 
   try {
     await waitForServer(BASE);
@@ -86,7 +100,7 @@ async function main() {
     await browser.close();
     console.log(`Prerender complete: ${routes.length} routes`);
   } finally {
-    preview.kill("SIGTERM");
+    stopPreview();
   }
 }
 
